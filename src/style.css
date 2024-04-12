@@ -1,20 +1,25 @@
 body {
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: repeat(8, 1fr);
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-color: #556F44;
 }
 
 header {
-    background-color: green;
     grid-column: 1 / -1 ;
 
 }
 
 nav {
-    background-color: red;
+    grid-row: 2 / -1;
 }
 
 div {
-    background-color: blue;
-
+    background-color: #f1f1f1;
+    grid-row: 2 / -1 ;
+    margin: 0 20px 20px 0;
+    border-radius: 45px;
 }
