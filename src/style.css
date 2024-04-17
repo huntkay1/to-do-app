@@ -1,3 +1,4 @@
+
 body {
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -6,20 +7,56 @@ body {
     padding: 0;
     margin: 0;
     background-color: #556F44;
+    font-family: Lexend Deca;
 }
 
 header {
     grid-column: 1 / -1 ;
+    display: flex;
+    padding-left: 50px;
+    margin-top: 25px;
+}
 
+.melon-icon {
+    padding-top: 12px;
+}
+
+h1 {
+    color: #f1f1f1;
+    font-weight: 500;
+    order: 2;
+    padding-left: 5px;
 }
 
 nav {
     grid-row: 2 / -1;
+    margin-top: 50px;
+}
+
+nav ul {
+    padding-bottom: 30px;
+}
+
+nav li {
+    list-style-type: none;
+    font-size: 18px;
+    margin-left: 10px;
+    padding-bottom: 45px;
+    font-weight: 300;
+}
+
+#nav-1 {
+    color: #C7DEB6;
+}
+
+#nav-2 {
+    color: #f1f1f1;
 }
 
 div {
     background-color: #f1f1f1;
     grid-row: 2 / -1 ;
-    margin: 0 20px 20px 0;
+    margin: 0 10px 10px 0;
     border-radius: 45px;
 }
+
