@@ -13,16 +13,38 @@ melonIcon.classList.add("melon-icon");
 header.appendChild(melonIcon);
 
 const nav1 = document.getElementById("nav-1");
-const listItem = document.createElement('li');
-const navItemName = document.createElement('p');
-navItemName.innerHTML = "Today";
-listItem.classList.add("nav1-item");
+
 const todayIcon = new Image(35, 35);
 todayIcon.src = todayIconLight;
 
-listItem.appendChild(todayIcon);
-listItem.appendChild(navItemName);
-nav1.appendChild(listItem);
+
+
+const monthIcon = new Image(35,35);
+monthIcon.src = monthIconLight;
+const weekIcon = new Image(35,35);
+weekIcon.src = weekIconLight;
+const allIcon = new Image(35,35);
+allIcon.src = allIconLight;
+
+
+const navItems = {
+    Today : todayIcon,
+    Week : weekIcon,
+    Month : monthIcon,
+    All : allIcon
+}
+
+
+Object.entries(navItems).forEach(([navTitle, icon]) => {
+    const listItem = document.createElement('li');
+        const navItemTitle = document.createElement('p');
+        navItemTitle.innerHTML = navTitle;
+        listItem.classList.add("nav1-item");
+        listItem.classList.add("nav1-item");
+        listItem.appendChild(icon);
+        listItem.appendChild(navItemTitle);
+        nav1.appendChild(listItem);
+})
 
 
 
