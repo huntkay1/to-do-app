@@ -5,20 +5,10 @@ import monthIconLight from './month-icon-light.png';
 import allIconLight from './all-icon-light.png';
 import melon from './melon-icon.png';
 
-//add logo icon
-const header = document.querySelector("header");
 const melonIcon = new Image(55, 55);
 melonIcon.src = melon;
-melonIcon.classList.add("melon-icon");
-header.appendChild(melonIcon);
-
-const nav1 = document.getElementById("nav-1");
-
 const todayIcon = new Image(35, 35);
 todayIcon.src = todayIconLight;
-
-
-
 const monthIcon = new Image(35,35);
 monthIcon.src = monthIconLight;
 const weekIcon = new Image(35,35);
@@ -26,12 +16,21 @@ weekIcon.src = weekIconLight;
 const allIcon = new Image(35,35);
 allIcon.src = allIconLight;
 
+//add logo icon
+const header = document.querySelector("header");
+melonIcon.classList.add("melon-icon");
+header.appendChild(melonIcon);
+
+const nav1 = document.getElementById("nav-1");
+
+
+
 
 const navItems = {
     Today : todayIcon,
-    Week : weekIcon,
-    Month : monthIcon,
-    All : allIcon
+    "This Week" : weekIcon,
+    "This Month" : monthIcon,
+    "All Tasks" : allIcon
 }
 
 

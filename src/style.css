@@ -33,7 +33,7 @@ h1 {
 
 nav {
     grid-row: 2 / -1;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 nav ul {
@@ -43,7 +43,7 @@ nav ul {
 nav li {
     list-style-type: none;
     font-size: 18px;
-    padding-bottom: 45px;
+    padding-bottom: 30px;
     font-weight: 300;
 }
 
