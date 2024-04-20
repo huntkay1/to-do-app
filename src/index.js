@@ -5,6 +5,7 @@ import monthIconLight from './month-icon-light.png';
 import allIconLight from './all-icon-light.png';
 import melon from './melon-icon.png';
 
+//icons
 const melonIcon = new Image(55, 55);
 melonIcon.src = melon;
 const todayIcon = new Image(35, 35);
@@ -17,14 +18,13 @@ const allIcon = new Image(35,35);
 allIcon.src = allIconLight;
 
 //add logo icon
-const header = document.querySelector("header");
+const logo = document.getElementById("logo");
 melonIcon.classList.add("melon-icon");
-header.appendChild(melonIcon);
+logo.appendChild(melonIcon);
 
+
+//add nav1 item titles and icons
 const nav1 = document.getElementById("nav-1");
-
-
-
 
 const navItems = {
     Today : todayIcon,
@@ -32,7 +32,6 @@ const navItems = {
     "This Month" : monthIcon,
     "All Tasks" : allIcon
 }
-
 
 Object.entries(navItems).forEach(([navTitle, icon]) => {
     const listItem = document.createElement('li');
@@ -45,14 +44,3 @@ Object.entries(navItems).forEach(([navTitle, icon]) => {
         nav1.appendChild(listItem);
 })
 
-
-
-// const todayImg = new Image(45, 45);
-// todayImg.src = todayIcon;\
-
-
-// let nav1 = document.getElementById("nav-1");
-// nav1.appendChild(todayImg);
-
-
-//its there but its the same color as the background

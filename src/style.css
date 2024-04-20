@@ -2,7 +2,7 @@
 body {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     height: 100vh;
     padding: 0;
     margin: 0;
@@ -15,26 +15,48 @@ header {
     grid-row: 1 / 2;
     grid-column: 1 / -1 ;
     display: flex;
-    padding-left: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px 0 50px;
     margin-top: 25px;
+}
+
+#logo {
+    display: flex;
+    justify-content: space-between;
 }
 
 .melon-icon {
     padding-top: 10px;
 }
 
+header button {
+    background-color: transparent;
+    border: 1.5px solid #C7DEB6;
+    font-size: 15px;
+    color: #f1f1f1;
+    padding: 15px 25px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+header button:hover {
+    background-color: #C7DEB6;
+    color: #556F44;
+}
+
 h1 {
     color: #f1f1f1;
     font-size: 30px;
     font-weight: 500;
-    order: 2;
     padding-left: 3px;
+    order: 2;
 }
 
 nav {
     grid-row: 2 / -1;
-    margin-top: 40px;
-    min-width: 300px;
+    min-width: 250px;
+    margin-top: 50px;
 }
 
 nav ul {
@@ -44,13 +66,13 @@ nav ul {
 nav li {
     list-style-type: none;
     font-size: 18px;
-    padding-bottom: 30px;
+    padding-bottom: 35px;
     font-weight: 300;
 }
 
 #nav-1 {
     color: #C7DEB6;
-    margin: 0 30px 0 30px;
+    margin: 0 20px 0 30px;
     border-bottom: 1px solid #C7DEB6;
 }
 
@@ -76,11 +98,11 @@ nav li {
     color: #C7DEB6;
 }
 
-div {
+main {
     background-color: #f1f1f1;
     grid-row: 1 / -1 ;
     grid-column: 2 / -1;
-    margin: 30px 10px 10px 0;
+    margin: 120px 10px 10px 0;
     border-radius: 45px;
     overflow: auto;
 }
