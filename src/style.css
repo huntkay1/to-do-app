@@ -34,6 +34,7 @@ h1 {
 nav {
     grid-row: 2 / -1;
     margin-top: 40px;
+    min-width: 300px;
 }
 
 nav ul {
@@ -49,7 +50,8 @@ nav li {
 
 #nav-1 {
     color: #C7DEB6;
-    margin-left: 22px;
+    margin: 0 30px 0 30px;
+    border-bottom: 1px solid #C7DEB6;
 }
 
 .nav1-item {
@@ -70,14 +72,16 @@ nav li {
     font-size: 15px;
     font-weight: 300;
     margin-left: 48px;
+    margin-top: 20px;
     color: #C7DEB6;
 }
 
 div {
     background-color: #f1f1f1;
     grid-row: 1 / -1 ;
-    grid-column: 2 / 3;
-    margin: 50px 10px 10px 0;
+    grid-column: 2 / -1;
+    margin: 30px 10px 10px 0;
     border-radius: 45px;
+    overflow: auto;
 }
 
