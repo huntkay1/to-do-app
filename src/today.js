@@ -1,6 +1,5 @@
 import './style.css';
-import { today } from './today.js';
-import todayIconLight from './today-icon-light.png';
+import todayIconDark from './today-icon.png';
 import weekIconLight from './week-icon-light.png';
 import monthIconLight from './month-icon-light.png';
 import allIconLight from './all-icon-light.png';
@@ -10,7 +9,7 @@ import melon from './melon-icon.png';
 const melonIcon = new Image(55, 55);
 melonIcon.src = melon;
 const todayIcon = new Image(35, 35);
-todayIcon.src = todayIconLight;
+todayIcon.src = todayIconDark;
 const monthIcon = new Image(35,35);
 monthIcon.src = monthIconLight;
 const weekIcon = new Image(35,35);
@@ -44,6 +43,3 @@ Object.entries(navItems).forEach(([navTitle, icon]) => {
         listItem.appendChild(navItemTitle);
         nav1.appendChild(listItem);
 })
-
-
-
