@@ -63,26 +63,28 @@ nav ul {
     padding-bottom: 30px;
 }
 
-nav li {
-    list-style-type: none;
-    font-size: 18px;
-    padding-bottom: 35px;
-    font-weight: 300;
-}
-
 #nav-1 {
-    color: #C7DEB6;
     margin: 0 20px 0 30px;
     border-bottom: 1px solid #C7DEB6;
 }
 
-.nav1-item {
-    display: flex;
+#nav-1 button {
+    display: flex; 
     align-items: center;
+    width: 200px;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 35px;
 }
 
-.nav1-item img{
+#nav-1 button img{
     padding-right: 15px;
+}
+
+#nav-1 button p {
+    color: #C7DEB6;
+    font-size: 18px;
+    font-weight: 300;
 }
 
 

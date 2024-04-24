@@ -1,5 +1,5 @@
 import './style.css';
-import { today } from './today.js';
+//import { today } from './today.js';
 import todayIconLight from './today-icon-light.png';
 import weekIconLight from './week-icon-light.png';
 import monthIconLight from './month-icon-light.png';
@@ -34,8 +34,20 @@ const navItems = {
     "All Tasks" : allIcon
 }
 
+// Object.entries(navItems).forEach(([navTitle, icon]) => {
+//     const listItem = document.createElement('li');
+//         const navItemTitle = document.createElement('p');
+//         navItemTitle.innerHTML = navTitle;
+//         listItem.classList.add("nav1-item");
+//         listItem.classList.add("nav1-item");
+//         listItem.appendChild(icon);
+//         listItem.appendChild(navItemTitle);
+//         nav1.appendChild(listItem);
+// })
+
+
 Object.entries(navItems).forEach(([navTitle, icon]) => {
-    const listItem = document.createElement('li');
+    const listItem = document.createElement('button');
         const navItemTitle = document.createElement('p');
         navItemTitle.innerHTML = navTitle;
         listItem.classList.add("nav1-item");
@@ -44,6 +56,3 @@ Object.entries(navItems).forEach(([navTitle, icon]) => {
         listItem.appendChild(navItemTitle);
         nav1.appendChild(listItem);
 })
-
-
-
