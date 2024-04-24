@@ -56,12 +56,13 @@ h1 {
 nav {
     grid-row: 2 / -1;
     min-width: 250px;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
+
+/* NAV 1 */
 #nav-1 {
-    margin: 0 0 0 30px;
-    border-bottom: 1px solid #C7DEB6;
+    margin-left: 30px;
 }
 
 #nav-1 button {
@@ -97,14 +98,17 @@ button.active {
 }
 
 
+
+/* NAV 2 */
 #nav-2 {
     color: #f1f1f1;
+    border-top: 1px solid #C7DEB6;
+    margin: 0 15px 0 30px;
 }
 
 #nav-subhead {
     font-size: 15px;
     font-weight: 300;
-    margin-left: 48px;
     margin-top: 20px;
     color: #C7DEB6;
 }

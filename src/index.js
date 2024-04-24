@@ -54,7 +54,6 @@ buttons.forEach(button => {
 })
 
 const changeTab = (e) => {
-
     buttons.forEach(button => {
         if (button.classList.contains("active")) {
             button.classList.remove("active");
@@ -64,3 +63,4 @@ const changeTab = (e) => {
 
     activeTab.classList.add("active");
 }
+//fix add task button
