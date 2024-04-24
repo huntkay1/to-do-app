@@ -56,35 +56,44 @@ h1 {
 nav {
     grid-row: 2 / -1;
     min-width: 250px;
-    margin-top: 50px;
-}
-
-nav ul {
-    padding-bottom: 30px;
+    margin-top: 60px;
 }
 
 #nav-1 {
-    margin: 0 20px 0 30px;
+    margin: 0 0 0 30px;
     border-bottom: 1px solid #C7DEB6;
 }
 
 #nav-1 button {
     display: flex; 
     align-items: center;
-    width: 200px;
+    width: 100%;
     background-color: transparent;
     border: none;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
+    padding: 15px 0 15px 0;
 }
 
 #nav-1 button img{
     padding-right: 15px;
+    padding-left: 15px;
+    pointer-events: none;
 }
 
 #nav-1 button p {
     color: #C7DEB6;
     font-size: 18px;
     font-weight: 300;
+    pointer-events: none; 
+}
+
+button.active {
+   background-color: #f1f1f1 !important;
+   border-radius: 20px 0 0 20px;
+}
+
+.active p {
+    color: #556F44 !important;
 }
 
 
