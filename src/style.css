@@ -77,14 +77,14 @@ nav {
 
 #nav-1 button svg{
     padding-right: 15px;
-    padding-left: 15px;
+    padding-left: 25px;
     pointer-events: none;
 }
 
 #nav-1 button p {
     color: #C7DEB6;
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     pointer-events: none; 
 }
 
@@ -95,7 +95,6 @@ button.active {
 
 .active p {
     color: #556F44 !important;
-    font-weight: 400 !important;
 }
 
 button.active svg {
