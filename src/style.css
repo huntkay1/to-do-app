@@ -62,7 +62,7 @@ nav {
 
 /* NAV 1 */
 #nav-1 {
-    margin-left: 30px;
+    margin-left: 60px;
 }
 
 #nav-1 button {
@@ -71,11 +71,11 @@ nav {
     width: 100%;
     background-color: transparent;
     border: none;
-    margin-bottom: 20px;
-    padding: 15px 0 15px 0;
+    margin-bottom: 40px;
+    padding: 5px 0 5px 0;
 }
 
-#nav-1 button img{
+#nav-1 button svg{
     padding-right: 15px;
     padding-left: 15px;
     pointer-events: none;
@@ -95,8 +95,12 @@ button.active {
 
 .active p {
     color: #556F44 !important;
+    font-weight: 400 !important;
 }
 
+button.active svg {
+    fill:#556F44;
+}
 
 
 /* NAV 2 */
