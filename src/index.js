@@ -1,3 +1,5 @@
+// Import all of Bootstrap's CSS
+
 import './style.css';
 import melon from './melon-icon.png';
 
