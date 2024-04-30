@@ -157,13 +157,13 @@ dialog {
     background-color: #f1f1f1;
     border: none;
     border-radius: 25px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    padding: 40px 30px 20px 30px;
+    padding: 20px 30px 20px 30px;
 }
 
 #close {
@@ -173,7 +173,8 @@ form {
     background-color: transparent;
     margin: 12px;
     align-self: flex-end;
-    color:#556F44;
+    color:#111509;
+    outline: none;
 }
 
 input {
@@ -181,14 +182,20 @@ input {
     font-size: 15px;
     height: 20px;
     border: 0;
-    border-bottom: 1.5px solid #556F44;
+    border-bottom: 1.5px solid #111509;
     padding-left: 2px;
     padding-bottom: 2px;
     background-color: #f1f1f1;
 }
 
+input[type=textarea] {
+    border: 1.5px solid #111509;
+    border-radius: 5px;
+    padding: 2px 5px 80px 5px;
+}
+
 select {
-    border: 1.5px solid #556F44;
+    border: 1.5px solid #111509;
     padding: 2px 5px 80px 5px;
     margin-bottom: 35px;
     margin-top: 5px;
@@ -208,7 +215,7 @@ input:focus {
 
 label {
     margin-bottom: 5px;
-    color:#556F44;
+    color:#111509;
     font-size: 13px;
 }
 
@@ -216,8 +223,8 @@ label {
     background-color: #556F44;
     border: none;
     color:#f1f1f1;
-    border-radius: 5px;
-    height: 45px;
+    border-radius: 10px;
+    height: 50px;
     font-size: 15px;
     font-weight: 400;
 }
