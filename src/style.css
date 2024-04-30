@@ -126,3 +126,61 @@ main {
     overflow: auto;
 }
 
+dialog {
+    height: 515px;
+    width: 500px;
+    padding-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+#close {
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    background-color: transparent;
+    margin: 12px;
+    align-self: flex-end;
+}
+
+input {
+    margin-bottom: 35px;
+    font-size: 15px;
+    height: 20px;
+    border: 0;
+    border-bottom: 2px solid black;
+    padding-left: 2px;
+    padding-bottom: 2px;
+}
+
+input[type=textarea] {
+    border: 2px solid black;
+    padding: 2px 5px 80px 5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.input-pair {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+#submit {
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 400;
+}
+

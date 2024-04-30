@@ -2,6 +2,7 @@ import './style.css';
 import melon from './melon-icon.png';
 
 
+
 //add logo icon
 const melonIcon = new Image(55, 55);
 melonIcon.src = melon;
@@ -11,6 +12,9 @@ logo.appendChild(melonIcon);
 
 
 const dynamicNavButtons = [...document.getElementsByClassName('nav-1')];
+const addTaskBttn = document.getElementById("add-task");
+const dialog = document.querySelector("dialog");
+const dialogCloseBttn = document.getElementById("close");
 
 dynamicNavButtons.forEach(button => {
     button.addEventListener('click', (e) => {
@@ -28,3 +32,11 @@ const changeTab = (e) => {
     console.log(activeTab.firstChild);
     activeTab.classList.add("active");
 }
+
+addTaskBttn.addEventListener('click', () => {
+    dialog.showModal();
+})
+dialogCloseBttn.addEventListener('click', () => {
+    dialog.close();
+    document.querySelector('form').reset();
+})
