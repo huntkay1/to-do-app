@@ -43,6 +43,7 @@ header button {
 header button:hover {
     background-color: #C7DEB6;
     color: #556F44;
+    font-weight: 500;
 }
 
 h1 {
@@ -88,7 +89,7 @@ nav {
     pointer-events: none; 
 }
 
-button.active {
+#nav-1 button.active {
    background-color: #f1f1f1 !important;
    border-radius: 20px 0 0 20px;
 }

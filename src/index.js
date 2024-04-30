@@ -10,16 +10,16 @@ melonIcon.classList.add("melon-icon");
 logo.appendChild(melonIcon);
 
 
-const buttons = [...document.querySelectorAll('button')];
+const dynamicNavButtons = [...document.getElementsByClassName('nav-1')];
 
-buttons.forEach(button => {
+dynamicNavButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         changeTab(e)
     });
 })
 
 const changeTab = (e) => {
-    buttons.forEach(button => {
+    dynamicNavButtons.forEach(button => {
         if (button.classList.contains("active")) {
             button.classList.remove("active");
         }
