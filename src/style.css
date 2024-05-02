@@ -113,32 +113,34 @@ button.active svg {
 #nav-subhead {
     font-size: 15px;
     font-weight: 300;
-    margin-top: 20px;
+    margin: 20px 0 18px -5px;
     color: #C7DEB6;
-    margin-left: -5px;
 }
 
-#add-proj {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: none;
+#add-project {
     background-color: transparent;
+    margin-left: -6px;
+    width: 80%;
+    border: none;
+}
+
+#add-project::placeholder {
+    color: #f1f1f1;
     font-size: 18px;
     font-weight: 400;
+}
+
+#add-project:focus{
+    border-bottom: 1px solid white;
     color: #f1f1f1;
-    width: 100%;
-    max-width: 250px;
-    margin-left: 15px;
-    padding-right: 30px;
 }
 
-#add-proj:hover {
-    color: #d6ded4;
+#add-project:focus::placeholder {
+    color: transparent;
 }
 
-#add-proj:hover #plus-icon {
-    stroke: #d6ded4;
+#add-proj-input {
+    display: flex;
 }
 
 main {
@@ -151,7 +153,7 @@ main {
 }
 
 /* POP-UP FORM */
-dialog {
+#add-task-popup {
     height: 550px;
     width: 500px;
     background-color: #f1f1f1;
@@ -160,13 +162,13 @@ dialog {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
 }
 
-form {
+#add-task-popup form {
     display: flex;
     flex-direction: column;
     padding: 20px 30px 20px 30px;
 }
 
-#close {
+.close {
     font-size: 20px;
     font-weight: 500;
     border: none;
@@ -219,7 +221,7 @@ label {
     font-size: 13px;
 }
 
-#submit {
+.submit {
     background-color: #556F44;
     border: none;
     color:#f1f1f1;

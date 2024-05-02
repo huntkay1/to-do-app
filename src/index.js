@@ -1,9 +1,6 @@
-// Import all of Bootstrap's CSS
 
 import './style.css';
 import melon from './melon-icon.png';
-
-
 
 //add logo icon
 const melonIcon = new Image(55, 55);
@@ -15,7 +12,7 @@ logo.appendChild(melonIcon);
 
 const dynamicNavButtons = [...document.getElementsByClassName('nav-1')];
 const addTaskBttn = document.getElementById("add-task");
-const dialog = document.querySelector("dialog");
+const addTaskDialog = document.getElementById("add-task-popup");
 const dialogCloseBttn = document.getElementById("close");
 
 dynamicNavButtons.forEach(button => {
@@ -36,9 +33,13 @@ const changeTab = (e) => {
 }
 
 addTaskBttn.addEventListener('click', () => {
-    dialog.showModal();
+    addTaskDialog.showModal();
 })
 dialogCloseBttn.addEventListener('click', () => {
-    dialog.close();
+    addTaskDialog.close();
     document.querySelector('form').reset();
 })
+
+
+
+

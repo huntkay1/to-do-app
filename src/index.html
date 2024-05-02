@@ -19,7 +19,7 @@
         <button id="add-task">Add Task +</button>
     </header>
 
-    <dialog>
+    <dialog id="add-task-popup">
         <form>
             <button value="cancel" id="close" formmethod="dialog">X</button>
             <div class="input-pair">
@@ -39,14 +39,14 @@
 
             <div class="input-pair">
                 <label for="project">Add to Project</label>
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select">
                     <option selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </select>
             </div>
-            <button type="submit" id="submit">Add</button>
+            <button type="submit" class="submit">Add</button>
         </form>
     </dialog>
 
@@ -72,17 +72,25 @@
 
         <ul id="nav-2">
             <h2 id="nav-subhead">Projects</h2>
-            <button id="add-proj">
-                <p>Add Project</p>
+            <div id="add-proj-input">
+                <input type="text" placeholder="Add Project" id="add-project">
                 <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path id="plus-icon" d="M6 12H18M12 6V18" stroke="#f1f1f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </button>
+            </div>
         </ul>
     </nav>
 
+    <dialog id="add-proj-popup">
+        <form>
+            <div class="input-pair">
+                <label>Project Name</label>
+                <input type="text">
+            </div>
+        </form>
+    </dialog>
+
     <main>
-       
     </main>
     
 </body>
