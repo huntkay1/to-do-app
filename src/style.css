@@ -56,14 +56,14 @@ h1 {
 
 nav {
     grid-row: 2 / -1;
-    min-width: 250px;
+    min-width: 230px;
     margin-top: 40px;
 }
 
 
 /* NAV 1 */
 #nav-1 {
-    margin-left: 60px;
+    margin-left: 5vw;
 }
 
 #nav-1 button {
@@ -107,19 +107,25 @@ button.active svg {
 #nav-2 {
     color: #f1f1f1;
     border-top: 1px solid #C7DEB6;
-    margin: 0 15px 0 30px;
+    margin-right: 15px;
 }
 
 #nav-subhead {
     font-size: 15px;
     font-weight: 300;
-    margin: 20px 0 18px -5px;
+    margin: 20px 0 18px 2vw;
     color: #C7DEB6;
+}
+
+#add-proj-input {
+    display: flex;
+    margin-right: 10px;
 }
 
 #add-project {
     background-color: transparent;
-    margin-left: -6px;
+    margin-left: 4vw;
+    margin-right: 5px;
     width: 80%;
     border: none;
 }
@@ -131,7 +137,7 @@ button.active svg {
 }
 
 #add-project:focus{
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #C7DEB6;
     color: #f1f1f1;
 }
 
@@ -139,10 +145,21 @@ button.active svg {
     color: transparent;
 }
 
-#add-proj-input {
-    display: flex;
+#add-proj-submit {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    height: 25px;
+    width: 25px;
+    padding: 0;
 }
 
+#add-proj-submit:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+
+/* MAIN TODO AREA */
 main {
     background-color: #f1f1f1;
     grid-row: 1 / -1 ;
@@ -151,6 +168,7 @@ main {
     border-radius: 45px;
     overflow: auto;
 }
+
 
 /* POP-UP FORM */
 #add-task-popup {

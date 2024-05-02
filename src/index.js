@@ -1,4 +1,3 @@
-
 import './style.css';
 import melon from './melon-icon.png';
 
