@@ -104,18 +104,23 @@ button.active svg {
     fill:#556F44;
 }
 
+#nav-divider {
+    height: 2px;
+    margin-left: 30px;
+    margin-right: 20px;
+    border-top: 1px solid #C7DEB6;
+}
 
 /* NAV 2 */
 #nav-2 {
     color: #f1f1f1;
-    border-top: 1px solid #C7DEB6;
     margin-right: 15px;
 }
 
 #nav-subhead {
     font-size: 15px;
     font-weight: 300;
-    margin: 20px 0 18px 2vw;
+    margin: 20px 0 20px 2vw;
     color: #C7DEB6;
 }
 
