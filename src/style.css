@@ -33,9 +33,9 @@ header {
 header button {
     background-color: transparent;
     border: 1.5px solid #C7DEB6;
-    font-size: 15px;
+    font-size: 14px;
     color: #f1f1f1;
-    padding: 15px 25px;
+    padding: 12px 22px;
     border-radius: 20px;
     margin-bottom: 10px;
 }
@@ -85,7 +85,7 @@ nav {
 
 #nav-1 button p {
     color: #C7DEB6;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     pointer-events: none; 
     padding-right: 10px;
@@ -118,7 +118,7 @@ button.active svg {
 }
 
 #nav-subhead {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 300;
     margin: 20px 0 20px 2vw;
     color: #C7DEB6;
@@ -139,7 +139,7 @@ button.active svg {
 
 #add-project::placeholder {
     color: #f1f1f1;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
 }
 
