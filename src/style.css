@@ -34,7 +34,7 @@ header button {
     background-color: transparent;
     border: 1.5px solid #C7DEB6;
     font-size: 14px;
-    color: #f1f1f1;
+    color: #f0fff0;
     padding: 12px 22px;
     border-radius: 20px;
     margin-bottom: 10px;
@@ -47,8 +47,8 @@ header button:hover {
 }
 
 h1 {
-    color: #f1f1f1;
-    font-size: 30px;
+    color: #f0fff0;
+    font-size: 28px;
     font-weight: 500;
     padding-left: 3px;
     order: 2;
@@ -93,7 +93,7 @@ nav {
 }
 
 #nav-1 button.active {
-   background-color: #f1f1f1 !important;
+   background-color: #f0fff0 !important;
    border-radius: 20px 0 0 20px;
 }
 
@@ -114,7 +114,7 @@ button.active svg {
 
 /* NAV 2 */
 #nav-2 {
-    color: #f1f1f1;
+    color: #f0fff0;
     margin-right: 15px;
 }
 
@@ -139,7 +139,7 @@ button.active svg {
 }
 
 #add-project::placeholder {
-    color: #f1f1f1;
+    color: #f0fff0;
     font-size: 16px;
     font-weight: 400;
 }
@@ -169,7 +169,7 @@ button.active svg {
 
 /* MAIN TODO AREA */
 main {
-    background-color: #f1f1f1;
+    background-color: #f0fff0;
     grid-row: 1 / -1 ;
     grid-column: 2 / -1;
     margin: 120px 10px 10px 0;
@@ -182,7 +182,7 @@ main {
 #add-task-popup {
     height: 550px;
     width: 500px;
-    background-color: #f1f1f1;
+    background-color: #f0fff0;
     border: none;
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
@@ -213,7 +213,7 @@ input {
     border-bottom: 1.5px solid #111509;
     padding-left: 2px;
     padding-bottom: 2px;
-    background-color: #f1f1f1;
+    background-color: #f0fff0;
 }
 
 input[type=textarea] {
@@ -228,7 +228,7 @@ select {
     margin-bottom: 35px;
     margin-top: 5px;
     outline: 0;
-    background: #f1f1f1;
+    background: #f0fff0;
     padding: 5px;
 }
 
@@ -250,7 +250,7 @@ label {
 .submit {
     background-color: #556F44;
     border: none;
-    color:#f1f1f1;
+    color:#f0fff0;
     border-radius: 10px;
     height: 50px;
     font-size: 15px;

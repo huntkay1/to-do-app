@@ -5,7 +5,7 @@ let module = require('./add-project.js');
 let projectNames = module.projectNames;
 
 //add logo icon
-const melonIcon = new Image(55, 55);
+const melonIcon = new Image(48, 48);
 melonIcon.src = melon;
 const logo = document.getElementById("logo");
 melonIcon.classList.add("melon-icon");
