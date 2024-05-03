@@ -1,5 +1,6 @@
 import './style.css';
 import melon from './melon-icon.png';
+import addProject from "./add-project.js";
 
 //add logo icon
 const melonIcon = new Image(55, 55);
