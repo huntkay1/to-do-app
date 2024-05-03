@@ -1,6 +1,8 @@
 import './style.css';
 import melon from './melon-icon.png';
-import addProject from "./add-project.js";
+
+let module = require('./add-project.js');
+let projectNames = module.projectNames;
 
 //add logo icon
 const melonIcon = new Image(55, 55);
@@ -14,6 +16,7 @@ const dynamicNavButtons = [...document.getElementsByClassName('nav-1')];
 const addTaskBttn = document.getElementById("add-task");
 const addTaskDialog = document.getElementById("add-task-popup");
 const dialogCloseBttn = document.getElementById("close");
+const nav2 = document.getElementById("nav-2");
 
 dynamicNavButtons.forEach(button => {
     button.addEventListener('click', (e) => {
@@ -39,6 +42,8 @@ dialogCloseBttn.addEventListener('click', () => {
     addTaskDialog.close();
     document.querySelector('form').reset();
 })
+
+projectNames.map(projName => console.log(projName))
 
 
 
