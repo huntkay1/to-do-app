@@ -80,7 +80,7 @@ nav {
 }
 
 #nav-1 button svg {
-    padding-right: 15px;
+    padding-right: 1vw;
     padding-left: 25px;
     pointer-events: none;
 }
@@ -118,6 +118,7 @@ button.active svg {
 #nav-2 {
     color: #f0fff0;
     margin-right: 15px;
+    list-style-type: none;
 }
 
 #nav-subhead {
@@ -127,23 +128,34 @@ button.active svg {
     color: #C7DEB6;
 }
 
-#add-proj-input {
+#add-proj-input{
     display: flex;
     margin-right: 10px;
+}
+
+.nav2-item {
+    margin-left: 3.75vw;
+    color: #f0fff0;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 22px;
+    background-color: transparent;
+    border: none;
 }
 
 #add-project {
     background-color: transparent;
     margin-left: 4vw;
     margin-right: 5px;
-    width: 80%;
+    margin-bottom: 25px;
     border: none;
+    width: 80%;
 }
 
 #add-project::placeholder {
     color: #f0fff0;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 #add-project:focus{
@@ -155,7 +167,7 @@ button.active svg {
     color: transparent;
 }
 
-#add-proj-submit {
+#add-proj-submit{
     background-color: transparent;
     border: none;
     border-radius: 8px;
@@ -167,6 +179,8 @@ button.active svg {
 #add-proj-submit:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 4px 0px inset;
 }
+
+
 
 
 /* MAIN TODO AREA */

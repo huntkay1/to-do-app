@@ -1,8 +1,7 @@
 import './style.css';
 import melon from './melon-icon.png';
+import './add-project.js';
 
-let module = require('./add-project.js');
-let projectNames = module.projectNames;
 
 //add logo icon
 const melonIcon = new Image(48, 48);
@@ -43,7 +42,9 @@ dialogCloseBttn.addEventListener('click', () => {
     document.querySelector('form').reset();
 })
 
-projectNames.map(projName => console.log(projName))
+
+
+
 
 
 
