@@ -2,7 +2,6 @@ import './style.css';
 import melon from './melon-icon.png';
 import './add-project.js';
 
-
 //add logo icon
 const melonIcon = new Image(48, 48);
 melonIcon.src = melon;
@@ -11,20 +10,19 @@ melonIcon.classList.add("melon-icon");
 logo.appendChild(melonIcon);
 
 
-const dynamicNavButtons = [...document.getElementsByClassName('nav-1')];
+const dynamicNav1Buttons = [...document.getElementsByClassName('nav-1')];
 const addTaskBttn = document.getElementById("add-task");
 const addTaskDialog = document.getElementById("add-task-popup");
 const dialogCloseBttn = document.getElementById("close");
-const nav2 = document.getElementById("nav-2");
 
-dynamicNavButtons.forEach(button => {
+dynamicNav1Buttons.forEach(button => {
     button.addEventListener('click', (e) => {
         changeTab(e)
     });
 })
 
 const changeTab = (e) => {
-    dynamicNavButtons.forEach(button => {
+    dynamicNav1Buttons.forEach(button => {
         if (button.classList.contains("active")) {
             button.classList.remove("active");
         }
