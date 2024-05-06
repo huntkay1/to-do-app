@@ -59,7 +59,6 @@ nav {
     grid-row: 2 / -1;
     min-width: 230px;
     margin-top: 65px;
-
 }
 
 
@@ -114,42 +113,35 @@ button.active svg {
     border-top: 1px solid #C7DEB6;
 }
 
+
 /* NAV 2 */
-#nav-2 {
-    color: #f0fff0;
-    margin-right: 15px;
-    list-style-type: none;
-}
 
 #nav-subhead {
     font-size: 16px;
     font-weight: 300;
-    margin: 20px 0 20px 2vw;
+    margin: 20px 0 20px 4.25vw;
     color: #C7DEB6;
+    padding-left: 12px;
+}
+
+#nav-2 {
+    color: #f0fff0;
+    margin-right: 25px;
+    list-style-type: none;
+    margin-left: 4.5vw;
 }
 
 #add-proj-input{
     display: flex;
-    margin-right: 10px;
-}
-
-.nav2-item {
-    margin-left: 3.75vw;
-    color: #f0fff0;
-    font-size: 16px;
-    font-weight: 300;
-    margin-bottom: 22px;
-    background-color: transparent;
-    border: none;
+    justify-content: space-between;
 }
 
 #add-project {
     background-color: transparent;
-    margin-left: 4vw;
     margin-right: 5px;
     margin-bottom: 25px;
     border: none;
-    width: 80%;
+    width: 85%;
 }
 
 #add-project::placeholder {
@@ -178,6 +170,24 @@ button.active svg {
 
 #add-proj-submit:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 4px 0px inset;
+}
+
+.nav2-item {
+    color: #f0fff0;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 22px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2px 0 2px;
+}
+
+.nav2-item .button-name {
+    padding-bottom: 4px;
 }
 
 
