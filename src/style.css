@@ -65,6 +65,7 @@ nav {
 /* NAV 1 */
 #nav-1 {
     margin-left: 5vw;
+    padding-left: 5px;
 }
 
 #nav-1 button {
@@ -108,7 +109,7 @@ button.active svg {
 
 #nav-divider {
     height: 2px;
-    margin-left: 30px;
+    margin-left: 35px;
     margin-right: 20px;
     border-top: 1px solid #C7DEB6;
 }
@@ -121,7 +122,7 @@ button.active svg {
     font-weight: 300;
     margin: 20px 0 20px 4.25vw;
     color: #C7DEB6;
-    padding-left: 12px;
+    padding-left: 15px;
 }
 
 #nav-2 {
@@ -141,7 +142,7 @@ button.active svg {
     margin-right: 5px;
     margin-bottom: 25px;
     border: none;
-    width: 85%;
+    width: 100%;
 }
 
 #add-project::placeholder {
@@ -187,7 +188,11 @@ button.active svg {
 }
 
 .nav2-item .button-name {
+    width: 200px;
     padding-bottom: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 
