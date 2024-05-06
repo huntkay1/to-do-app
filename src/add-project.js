@@ -21,6 +21,13 @@ function addProjectNametoArray() {
 }
 
 function updateProjectListUI() {
+
+    //clear nav2 list before appending to avoid repeats
+    while (nav2.childNodes.length > 1) {
+        nav2.removeChild(nav2.lastChild);
+    }
+
+    //creates project list button
     projectNames.map(projName => {
         const projectListItem = document.createElement('li');
         const projectBttn = document.createElement('button');
