@@ -234,11 +234,11 @@ main {
 
 /* POP-UP FORM */
 #add-task-popup {
-    height: 550px;
-    width: 500px;
+    height: 575px;
+    width: 450px;
     background-color: var(--white-color);
     border: none;
-    border-radius: 25px;
+    border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
 }
 
@@ -248,38 +248,40 @@ main {
     padding: 20px 30px 20px 30px;
 }
 
-.close {
+#close {
     font-size: 20px;
     font-weight: 500;
     border: none;
     background-color: transparent;
-    margin: 12px;
+    margin-bottom: 18px;
     align-self: flex-end;
     color:#111509;
     outline: none;
 }
 
 input {
-    margin-bottom: 35px;
-    font-size: 15px;
+    margin-bottom: 25px;
+    font-size: 13px;
     height: 20px;
-    border: 0;
-    border-bottom: 1.5px solid #111509;
+    border: none;
+    border-bottom: 1px solid #111509;
     padding-left: 2px;
     padding-bottom: 2px;
     background-color: var(--white-color);
 }
 
-input[type=textarea] {
-    border: 1.5px solid #111509;
+textarea {
+    border: 1px solid #111509;
     border-radius: 5px;
-    padding: 2px 5px 80px 5px;
+    padding: 4px 5px 80px 5px;
+    margin-bottom: 25px;
+    background-color: transparent;
+    resize: none;
+    font-size: 13px;
 }
 
 select {
-    border: 1.5px solid #111509;
-    padding: 2px 5px 80px 5px;
-    margin-bottom: 35px;
+    border: 1px solid #111509;
     margin-top: 5px;
     outline: 0;
     background: var(--white-color);
@@ -299,9 +301,10 @@ label {
     margin-bottom: 5px;
     color:#111509;
     font-size: 13px;
+    font-weight: 400;
 }
 
-.submit {
+#submit {
     background-color: #556F44;
     border: none;
     color:var(--white-color);
@@ -309,6 +312,7 @@ label {
     height: 50px;
     font-size: 15px;
     font-weight: 400;
+    margin-top: 45px;
 }
 
 #submit:hover {
