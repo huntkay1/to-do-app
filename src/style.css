@@ -150,20 +150,23 @@ button.active svg {
 #add-proj-input{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 25px;
+    margin-right: 5px;
 }
 
 #add-project {
     background-color: transparent;
-    margin-right: 5px;
-    margin-bottom: 25px;
     border: none;
     width: 100%;
+    padding-bottom: 4px;
+    font-size: 16px;
 }
 
 #add-project::placeholder {
     color: var(--white-color);
     font-size: 16px;
     font-weight: 400;
+    padding-bottom: 4px;
 }
 
 #add-project:focus{
@@ -267,7 +270,7 @@ main {
     outline: none;
 }
 
-input {
+.popup-input {
     margin-bottom: 25px;
     font-size: 16px;
     height: 40px;
@@ -306,9 +309,8 @@ input:focus {
 }
 
 label {
-    margin-bottom: 2px;
     color:var(--main-color);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 400;
 }
 
