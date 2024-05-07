@@ -46,6 +46,8 @@ function updateProjectListUI() {
     });
 }
 
+export { projectNames }
+
 
 
 
