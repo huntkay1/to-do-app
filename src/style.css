@@ -1,7 +1,9 @@
 :root {
     --white-color: #f8f8f8;
     --accent-text-color: #d4eac4;
-    --main-color: #556F44;
+    /* --main-color: #556F44; */
+    /* --main-color: #004a3a; */
+    --main-color: #1b5235;
 }
 
 body {
