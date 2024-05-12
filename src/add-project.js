@@ -3,6 +3,7 @@ let projectNames = [];
 const nav2 = document.getElementById("nav-2");
 const projectNameInput = document.getElementById("add-project");
 const addProjSubmit = document.getElementById("add-proj-submit");
+const selectInput = document.getElementById("form-select");
 
 addProjSubmit.addEventListener('click', addProjectNametoArray);
 
@@ -18,6 +19,7 @@ function addProjectNametoArray() {
     projectNames.push(projectNameInput.value);
     projectNameInput.value = "";
     updateProjectListUI();
+    updateSelectOptions();
 }
 
 function updateProjectListUI() {
@@ -43,6 +45,20 @@ function updateProjectListUI() {
         projectListItem.appendChild(projectBttn);
         projectBttn.classList.add("nav2-item");
         nav2.appendChild(projectListItem);
+    });
+}
+
+function updateSelectOptions() {
+
+    while (selectInput.childNodes.length > 1) {
+        selectInput.removeChild(selectInput.lastChild);
+    };
+
+    projectNames.forEach(projName => {
+        const option = document.createElement('option');
+        option.innerHTML = projName;
+        selectInput.appendChild(option);
+        
     });
 }
 

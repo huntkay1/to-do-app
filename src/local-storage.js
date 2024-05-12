@@ -8,7 +8,7 @@ export function addToLocalStorage(taskList) {
     }
 
     const storedTask = localStorage.getItem('task');
-    console.log(JSON.parse(storedTask));
+    console.log(JSON.parse(storedTask)); //REMOVE
 }
 
 function storageAvailable(type) {
