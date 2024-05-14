@@ -1,14 +1,14 @@
-import { taskList } from './add-task.js'
-
 export function addToLocalStorage(taskList) {
     if (storageAvailable("localStorage")) {
         localStorage.setItem('task', JSON.stringify(taskList));
       } else {
         // Too bad, no localStorage for us
     }
+}
 
-    const storedTask = localStorage.getItem('task');
-    console.log(JSON.parse(storedTask)); //REMOVE
+export function getFromStorage() {
+  const storedTask = localStorage.getItem('task');
+  return storedTask;
 }
 
 function storageAvailable(type) {

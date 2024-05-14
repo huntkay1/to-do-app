@@ -2,6 +2,7 @@ import './style.css';
 import melon from './melon-icon.png';
 import './add-project.js';
 import './add-task.js';
+import './distribute-tasks.js';
 
 //add logo icon
 const melonIcon = new Image(48, 48);

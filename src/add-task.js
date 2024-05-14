@@ -36,15 +36,13 @@ function updateTaskList(ev) {
         document.getElementById("task").value,
         document.getElementById("description").value,
         document.getElementById("date").value,
-        document.getElementById("project").value,
+        document.getElementById("form-select").value,
     )
     taskList.push(task);
     document.querySelector('form').reset();
     
     addToLocalStorage(taskList);
 }
-
-
 
 export { taskList }
 
