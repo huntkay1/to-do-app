@@ -1,4 +1,5 @@
 import { addToLocalStorage } from './local-storage.js';
+import { taskManager } from './task-manager.js';
 
 const taskList = [];
 
@@ -25,8 +26,10 @@ dialogCloseBttn.addEventListener('click', () => {
 })
 
 submitBttn.addEventListener('click', (ev) => {
-    updateTaskList(ev) 
-} )
+    updateTaskList(ev);
+    addToLocalStorage(taskList);
+    taskManager();
+})
 
 
 function updateTaskList(ev) {
@@ -40,9 +43,9 @@ function updateTaskList(ev) {
     )
     taskList.push(task);
     document.querySelector('form').reset();
-    
-    addToLocalStorage(taskList);
 }
+
+
 
 export { taskList }
 

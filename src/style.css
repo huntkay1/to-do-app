@@ -233,18 +233,6 @@ button.active svg {
 
 
 
-/* MAIN TODO AREA */
-main {
-    background-color: var(--white-color);
-    grid-row: 1 / -1 ;
-    grid-column: 2 / -1;
-    margin: 120px 10px 10px 0;
-    border-radius: 45px;
-    overflow: auto;
-}
-
-
-
 /* POP-UP FORM */
 #add-task-popup {
     height: 575px;
@@ -333,4 +321,16 @@ label {
     color: var(--white-color);
     transition: all 0.15s ease;
 }
+
+/* MAIN TODO AREA */
+#taskUI {
+    background-color: var(--white-color);
+    grid-row: 1 / -1 ;
+    grid-column: 2 / -1;
+    margin: 120px 10px 10px 0;
+    border-radius: 45px;
+    overflow: auto;
+    padding: 70px;
+}
+
 
