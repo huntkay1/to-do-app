@@ -1,4 +1,5 @@
 import { getFromStorage } from './local-storage';
+import { isToday, parseISO, format } from 'date-fns';
 
 export function taskManager() {
     const navButtons = [...document.getElementsByClassName("nav-1")];
@@ -13,18 +14,27 @@ export function taskManager() {
         const buttonName = e.target.name;
         const taskList = getFromStorage();
 
-        if (taskList.length == 0) {
-            return
-        }
+        if (buttonName === "All Tasks") {
+            createTaskElements(taskList, buttonName);
 
-        if (buttonName === "all") {
-            createTaskElements(taskList);
+        } else if (buttonName === "Today") {
+            var todayTaskList = taskList.filter(task => {
+                date = format(parseISO(task.date), 'MM/dd/yyyy');
+                if (isToday(date)) {
+                    return task;
+                }
+            })
+            createTaskElements(todayTaskList, buttonName);
         }
     };
 
-    function createTaskElements(taskList) {
+
+    function createTaskElements(taskList, buttonName) {
         
         taskUI.innerHTML = "";
+        const header = document.createElement("h2");
+        header.innerHTML = buttonName;
+        taskUI.appendChild(header);
 
         taskList.forEach(task => {
             const taskContainer = document.createElement('div');

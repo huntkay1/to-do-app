@@ -326,8 +326,8 @@ label {
     background-color: var(--white-color);
     grid-row: 1 / -1 ;
     grid-column: 2 / -1;
-    margin: 120px 10px 10px 0;
-    border-radius: 45px;
+    margin: 110px 20px 0 0;
+    border-radius: 45px 45px 0 0;
     overflow: auto;
     padding: 70px 100px 10px 80px;
 }
