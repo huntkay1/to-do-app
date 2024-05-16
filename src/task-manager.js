@@ -1,22 +1,30 @@
 import { getFromStorage } from './local-storage';
-import { isToday, parseISO, format } from 'date-fns';
+import { isToday, parseISO, format, isThisISOWeek, isThisMonth } from 'date-fns';
 
 export function taskManager() {
     const navButtons = [...document.getElementsByClassName("nav-1")];
     const taskUI = document.getElementById("taskUI");
 
+
     navButtons.forEach(button => {
-        button.addEventListener('click', (e) => {distributeTasks(e)})
+        //this will automatically display newly craeted task
+        if (button.classList.contains('active')) {
+            distributeTasks(button.name);
+        }
+
+        button.addEventListener('click', (e) => {
+            const buttonName = e.target.name;
+            distributeTasks(buttonName)
+        });
     });
 
 
-    function distributeTasks(e) {
-        const buttonName = e.target.name;
+    function distributeTasks(buttonName) {
+        
         const taskList = getFromStorage();
 
         if (buttonName === "All Tasks") {
             createTaskElements(taskList, buttonName);
-
         } else if (buttonName === "Today") {
             var todayTaskList = taskList.filter(task => {
                 date = format(parseISO(task.date), 'MM/dd/yyyy');
@@ -25,6 +33,22 @@ export function taskManager() {
                 }
             })
             createTaskElements(todayTaskList, buttonName);
+        } else if (buttonName === "This Week") {
+            var weekTaskList = taskList.filter(task => {
+                date = format(parseISO(task.date), 'MM/dd/yyyy');
+                if (isThisISOWeek(date)) {
+                    return task;
+                }
+            })
+            createTaskElements(weekTaskList, buttonName);
+        } else if (buttonName === "This Month") {
+            var monthTaskList = taskList.filter(task => {
+                date = format(parseISO(task.date), 'MM/dd/yyyy');
+                if (isThisMonth(date)) {
+                    return task;
+                }
+            })
+            createTaskElements(monthTaskList, buttonName);
         }
     };
 
