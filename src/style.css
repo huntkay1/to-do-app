@@ -4,6 +4,7 @@
     /* --main-color: #556F44; */
     /* --main-color: #004a3a; */
     --main-color: #1b5235;
+    --main-text-color: #282828;
     font-family: Lexend Deca;
 }
 
@@ -159,7 +160,6 @@ button.active svg {
     background-color: transparent;
     border: none;
     width: 100%;
-    padding-bottom: 4px;
     font-size: 16px;
 }
 
@@ -167,7 +167,6 @@ button.active svg {
     color: var(--white-color);
     font-size: 16px;
     font-weight: 400;
-    padding-bottom: 4px;
 }
 
 #add-project:focus{
@@ -220,7 +219,7 @@ button.active svg {
     text-overflow: ellipsis;
 }
 
-.nav2-item:hover div {
+.nav2-item:hover {
     color: var(--accent-text-color);
     transition: all 0.15s ease;
 }
@@ -332,6 +331,10 @@ label {
     padding: 70px 100px 10px 80px;
 }
 
+.task-container-header {
+    font-weight: 400;
+}
+
 .task-item {
     display: flex;
     justify-content: space-between;
@@ -360,8 +363,21 @@ label {
     width: 150px;
 }
 
+.task-name, .date {
+    color: var(--main-text-color);
+}
+
+.date {
+    font-size: 12px;
+}
+
 .task-icons {
     display: flex;
+    gap: 3px;
+}
+
+.edit-icon:hover, .trash-icon:hover {
+    fill: var(--main-text-color);
 }
 
 
