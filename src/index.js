@@ -12,7 +12,7 @@ melonIcon.classList.add("melon-icon");
 logo.appendChild(melonIcon);
 
 
-const dynamicNav1Buttons = [...document.getElementsByClassName('nav-1')];
+const dynamicNav1Buttons = [...document.getElementsByClassName('nav-button')];
 
 
 dynamicNav1Buttons.forEach(button => {
@@ -28,9 +28,10 @@ const changeTab = (e) => {
         }
     })
     var activeTab = e.target;
-    console.log(activeTab.firstChild);
     activeTab.classList.add("active");
 }
+
+
 
 
 

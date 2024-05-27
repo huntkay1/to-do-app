@@ -2,24 +2,27 @@ import { getFromStorage } from './local-storage';
 import { isToday, parseISO, format, isThisISOWeek, isThisMonth } from 'date-fns';
 
 export function taskManager() {
-    const navButtons = [...document.getElementsByClassName("nav-1")];
+    const navButtons = [...document.getElementsByClassName("nav-button")];
     const taskUI = document.getElementById("taskUI");
 
 
     navButtons.forEach(button => {
-        //this will automatically display newly craeted task
+        //this will automatically display newly created task
         if (button.classList.contains('active')) {
             distributeTasks(button.name);
         }
-
-        button.addEventListener('click', (e) => {
-            const buttonName = e.target.name;
-            distributeTasks(buttonName)
-        });
     });
 
+    document.body.addEventListener('click', (e) => {
+        let button = e.target;
+        let buttonName = e.target.name;
+        if (button.classList.contains("nav-button")) {
+            distributeTasks(buttonName, button)
+        }
+        
+    })
 
-    function distributeTasks(buttonName) {
+    function distributeTasks(buttonName, button) {
         
         const taskList = getFromStorage();
 
@@ -49,6 +52,14 @@ export function taskManager() {
                 }
             })
             createTaskElements(monthTaskList, buttonName);
+        } else if (buttonName === "Project") {
+            var projectName = button.textContent;
+            var projectTaskList = taskList.filter(task => {
+                if (task["project"] === projectName) {
+                    return task;
+                }
+            })
+            createTaskElements(projectTaskList, projectName);
         }
     };
 

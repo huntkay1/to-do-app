@@ -212,7 +212,7 @@ button.active svg {
     padding: 0 2px 0 2px;
 }
 
-.nav2-item .button-name {
+.nav2-item  {
     padding-right: 5px;
     padding-bottom: 4px;
     overflow: hidden;
