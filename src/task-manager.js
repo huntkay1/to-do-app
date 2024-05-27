@@ -8,7 +8,7 @@ export function taskManager() {
     const navButtons = getUpdatedNavButtonList();
 
     navButtons.forEach(button => {
-        //this will automatically display newly created task
+        //this will automatically display newly created task to the active page
         if (button.classList.contains('active')) {
             distributeTasks(button.name);
         }
@@ -27,6 +27,9 @@ export function taskManager() {
 export function distributeTasks(buttonName, button) {
         
     const taskList = getFromStorage();
+    taskList.sort(function(a,b){
+        return new Date(a.date) - new Date(b.date);
+    })
 
     if (buttonName === "All Tasks") {
         createTaskElements(taskList, buttonName);

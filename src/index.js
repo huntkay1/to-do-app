@@ -13,8 +13,6 @@ melonIcon.classList.add("melon-icon");
 logo.appendChild(melonIcon);
 
 
-// const navButtons = [...document.getElementsByClassName('nav-button')];
-
 const navButtons = getUpdatedNavButtonList();
 
 navButtons.forEach(button => {
