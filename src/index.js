@@ -4,22 +4,10 @@ import './add-project.js';
 import './add-task.js';
 import './task-manager.js';
 import { getUpdatedNavButtonList } from './add-project.js';
-import { getFromStorage } from './local-storage';
+import { getTasksFromStorage } from './local-storage';
 import { getProjectsFromStorage } from './local-storage';
 import { taskManager } from './task-manager.js';
 import { updateProjectListUI, updateSelectOptions } from './add-project.js';
-
-document.addEventListener('DOMContentLoaded', () => {
-    const storedTaskList = getFromStorage();
-    const storedProjectList = getProjectsFromStorage();
-    if (storedTaskList) {
-        taskManager();
-    }
-    if (storedProjectList) {
-        updateProjectListUI();
-        updateSelectOptions();
-    }
-});
 
 
 //add logo icon
@@ -31,6 +19,18 @@ logo.appendChild(melonIcon);
 
 const navButtons = getUpdatedNavButtonList();
 
+//display items saved in storage
+document.addEventListener('DOMContentLoaded', () => {
+    const storedTaskList = getTasksFromStorage();
+    const storedProjectList = getProjectsFromStorage();
+    if (storedTaskList) {
+        taskManager();
+    }
+    if (storedProjectList) {
+        updateProjectListUI();
+        updateSelectOptions();
+    }
+});
 
 navButtons.forEach(button => {
     button.addEventListener('click', (e) => {

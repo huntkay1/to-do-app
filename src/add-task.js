@@ -1,5 +1,5 @@
-import { addToLocalStorage } from './local-storage.js';
-import { getFromStorage } from './local-storage';
+import { addTasksToLocalStorage } from './local-storage.js';
+import { getTasksFromStorage } from './local-storage';
 import { taskManager } from './task-manager.js';
 
 
@@ -8,7 +8,7 @@ const addTaskDialog = document.getElementById("add-task-popup");
 const dialogCloseBttn = document.getElementById("close");
 const submitBttn = document.getElementById("submit");
 
-const taskList = getFromStorage() || [];
+const taskList = getTasksFromStorage() || [];
 
 class Task {
     constructor(name, description, date, project) {
@@ -44,7 +44,7 @@ function updateTaskList(ev) {
     taskList.push(task);
     document.querySelector('form').reset();
 
-    addToLocalStorage(taskList);
+    addTasksToLocalStorage(taskList);
     taskManager();
 }
 

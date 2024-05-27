@@ -1,4 +1,4 @@
-export function addToLocalStorage(taskList) {
+export function addTasksToLocalStorage(taskList) {
   if (storageAvailable("localStorage")) {
       localStorage.setItem('task', JSON.stringify(taskList));
     } else {
@@ -12,7 +12,7 @@ export function saveProjectsToStorage(projectList) {
   }
 };
 
-export function getFromStorage() {
+export function getTasksFromStorage() {
   const storedTaskList = JSON.parse(localStorage.getItem('task'));
   return storedTaskList;
 };

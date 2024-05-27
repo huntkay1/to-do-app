@@ -1,4 +1,4 @@
-import { getFromStorage } from './local-storage';
+import { getTasksFromStorage } from './local-storage';
 import { displayHeader } from "./index.js";
 import { getUpdatedNavButtonList } from './add-project.js';
 import { isToday, parseISO, format, isThisISOWeek, isThisMonth } from 'date-fns';
@@ -26,7 +26,7 @@ export function taskManager() {
 
 export function distributeTasks(buttonName, button) {
         
-    const taskList = getFromStorage();
+    const taskList = getTasksFromStorage();
     taskList.sort(function(a,b){
         return new Date(a.date) - new Date(b.date);
     })
