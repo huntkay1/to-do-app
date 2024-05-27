@@ -35,7 +35,7 @@ export function distributeTasks(buttonName, button) {
         createTaskElements(taskList, buttonName);
     } else if (buttonName === "Today") {
         var todayTaskList = taskList.filter(task => {
-            date = format(parseISO(task.date), 'MM/dd/yyyy');
+            date = parseISO(task.date);
             if (isToday(date)) {
                 return task;
             }
@@ -43,7 +43,7 @@ export function distributeTasks(buttonName, button) {
         createTaskElements(todayTaskList, buttonName);
     } else if (buttonName === "This Week") {
         var weekTaskList = taskList.filter(task => {
-            date = format(parseISO(task.date), 'MM/dd/yyyy');
+            date = parseISO(task.date);
             if (isThisISOWeek(date)) {
                 return task;
             }
@@ -51,7 +51,7 @@ export function distributeTasks(buttonName, button) {
         createTaskElements(weekTaskList, buttonName);
     } else if (buttonName === "This Month") {
         var monthTaskList = taskList.filter(task => {
-            date = format(parseISO(task.date), 'MM/dd/yyyy');
+            date = parseISO(task.date);
             if (isThisMonth(date)) {
                 return task;
             }
@@ -108,7 +108,8 @@ export function createTaskElements(taskList, buttonName) {
         taskContainer.appendChild(taskRight);
 
         taskName.innerHTML = task.name;
-        taskDate.innerHTML = task.date;
+        const formattedDate = format(parseISO(task.date), 'MM/dd/yyyy');
+        taskDate.innerHTML = formattedDate;
 
         taskUI.appendChild(taskContainer);
     }) 
