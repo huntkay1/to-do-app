@@ -12,11 +12,17 @@ const taskList = getTasksFromStorage() || [];
 
 class Task {
     constructor(name, description, date, project) {
+        this.id = generateUniqueId();
         this.name = name;
         this.description = description;
         this.date = date;
         this.project = project;
     }
+}
+
+//generate unique ID for task
+function generateUniqueId() {
+    return '_' + Math.random().toString(36).substr(2, 9);
 }
 
 addTaskBttn.addEventListener('click', () => {
