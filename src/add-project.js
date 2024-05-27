@@ -1,5 +1,8 @@
 import { displayHeader } from "./index.js";
-let projectNames = [];
+import { saveProjectsToStorage } from "./local-storage.js";
+import { getProjectsFromStorage } from "./local-storage.js";
+
+const projectNames = getProjectsFromStorage() || [];
 
 const nav2 = document.getElementById("nav-2");
 const projectNameInput = document.getElementById("add-project");
@@ -19,11 +22,12 @@ projectNameInput.addEventListener('keyup', (e) => {
 function addProjectNametoArray() {
     projectNames.push(projectNameInput.value);
     projectNameInput.value = "";
+    saveProjectsToStorage(projectNames);
     updateProjectListUI();
     updateSelectOptions();
 }
 
-function updateProjectListUI() {
+export function updateProjectListUI() {
 
     //clear nav2 list before appending to avoid repeats
     while (nav2.childNodes.length > 1) {
@@ -54,7 +58,7 @@ function updateProjectListUI() {
 
 }
 
-function updateSelectOptions() {
+export function updateSelectOptions() {
 
     while (selectInput.childNodes.length > 1) {
         selectInput.removeChild(selectInput.lastChild);

@@ -1,15 +1,26 @@
 export function addToLocalStorage(taskList) {
-    if (storageAvailable("localStorage")) {
-        localStorage.setItem('task', JSON.stringify(taskList));
-      } else {
-        // Too bad, no localStorage for us
-    }
-}
+  if (storageAvailable("localStorage")) {
+      localStorage.setItem('task', JSON.stringify(taskList));
+    } else {
+      // Too bad, no localStorage for us
+  }
+};
+
+export function saveProjectsToStorage(projectList) {
+  if (storageAvailable("localStorage")) {
+    localStorage.setItem('projects', JSON.stringify(projectList));
+  }
+};
 
 export function getFromStorage() {
   const storedTaskList = JSON.parse(localStorage.getItem('task'));
   return storedTaskList;
-}
+};
+
+export function getProjectsFromStorage() {
+  const storedProjectList = JSON.parse(localStorage.getItem('projects'));
+  return storedProjectList;
+};
 
 function storageAvailable(type) {
     let storage;
@@ -36,4 +47,4 @@ function storageAvailable(type) {
         storage.length !== 0
       );
     }
-}
+};

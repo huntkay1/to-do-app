@@ -5,13 +5,19 @@ import './add-task.js';
 import './task-manager.js';
 import { getUpdatedNavButtonList } from './add-project.js';
 import { getFromStorage } from './local-storage';
+import { getProjectsFromStorage } from './local-storage';
 import { taskManager } from './task-manager.js';
-
+import { updateProjectListUI, updateSelectOptions } from './add-project.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const storedTaskList = getFromStorage();
+    const storedProjectList = getProjectsFromStorage();
     if (storedTaskList) {
         taskManager();
+    }
+    if (storedProjectList) {
+        updateProjectListUI();
+        updateSelectOptions();
     }
 });
 
