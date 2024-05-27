@@ -1,12 +1,14 @@
 import { addToLocalStorage } from './local-storage.js';
+import { getFromStorage } from './local-storage';
 import { taskManager } from './task-manager.js';
 
-const taskList = [];
 
 const addTaskBttn = document.getElementById("add-task");
 const addTaskDialog = document.getElementById("add-task-popup");
 const dialogCloseBttn = document.getElementById("close");
 const submitBttn = document.getElementById("submit");
+
+const taskList = getFromStorage();
 
 class Task {
     constructor(name, description, date, project) {
@@ -27,14 +29,12 @@ dialogCloseBttn.addEventListener('click', () => {
 
 submitBttn.addEventListener('click', (ev) => {
     updateTaskList(ev);
-    addToLocalStorage(taskList);
-    taskManager();
 })
 
 
 function updateTaskList(ev) {
-    addTaskDialog.close();
     ev.preventDefault();
+    addTaskDialog.close();
     const task = new Task(
         document.getElementById("task").value,
         document.getElementById("description").value,
@@ -43,10 +43,11 @@ function updateTaskList(ev) {
     )
     taskList.push(task);
     document.querySelector('form').reset();
+
+    addToLocalStorage(taskList);
+    taskManager();
 }
 
 
-
-export { taskList }
 
 

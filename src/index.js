@@ -4,6 +4,17 @@ import './add-project.js';
 import './add-task.js';
 import './task-manager.js';
 import { getUpdatedNavButtonList } from './add-project.js';
+import { getFromStorage } from './local-storage';
+import { taskManager } from './task-manager.js';
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const storedTaskList = getFromStorage();
+    if (storedTaskList) {
+        taskManager();
+    }
+});
+
 
 //add logo icon
 const melonIcon = new Image(48, 48);
@@ -12,8 +23,8 @@ const logo = document.getElementById("logo");
 melonIcon.classList.add("melon-icon");
 logo.appendChild(melonIcon);
 
-
 const navButtons = getUpdatedNavButtonList();
+
 
 navButtons.forEach(button => {
     button.addEventListener('click', (e) => {
@@ -22,7 +33,6 @@ navButtons.forEach(button => {
         displayHeader(buttonName);
     });
 })
-
 
 export function displayHeader(buttonName) {
     const taskUI = document.getElementById("taskUI");
