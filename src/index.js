@@ -2,11 +2,11 @@ import './style.css';
 import melon from './melon-icon.png';
 import './project-manager.js';
 import './add-task.js';
-import './task-manager.js';
+import './taskUI-manager.js';
 import { getUpdatedNavButtonList } from './project-manager.js';
 import { getTasksFromStorage } from './local-storage';
 import { getProjectsFromStorage } from './local-storage';
-import { taskManager } from './task-manager.js';
+import { taskManager } from './taskUI-manager.js';
 import { updateProjectListUI, updateSelectOptions } from './project-manager.js';
 
 
@@ -43,10 +43,14 @@ navButtons.forEach(button => {
 export function displayHeader(buttonName) {
     const taskUI = document.getElementById("taskUI");
     taskUI.innerHTML = "";
-    const header = document.createElement("h2");
-    header.classList.add('task-container-header');
-    header.innerHTML = buttonName;
+    const header = document.createElement('div');
+    header.classList.add('taskUI-header');
+    const headerName = document.createElement("h2");
+    headerName.classList.add('taskUI-header-name');
+    headerName.innerHTML = buttonName;
+    header.appendChild(headerName);
     taskUI.appendChild(header);
+
 }
 
 const changeTabActiveStatus = (e) => {

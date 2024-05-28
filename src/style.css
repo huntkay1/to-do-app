@@ -331,7 +331,13 @@ label {
     padding: 70px 100px 10px 80px;
 }
 
-.task-container-header {
+.taskUI-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.taskUI-header-name {
     font-weight: 400;
 }
 

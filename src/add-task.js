@@ -1,6 +1,6 @@
 import { addTasksToLocalStorage } from './local-storage.js';
 import { getTasksFromStorage } from './local-storage';
-import { taskManager } from './task-manager.js';
+import { taskManager } from './taskUI-manager.js';
 
 
 const addTaskBttn = document.getElementById("add-task");

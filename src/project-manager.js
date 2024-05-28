@@ -83,6 +83,18 @@ export function getUpdatedNavButtonList() {
     return navButtons;
 }
 
+export function removeProject(e) {
+    const header = e.currentTarget.parentElement;
+    const selectedProjectName = header.firstChild.innerHTML;
+    for (var i = projectNames.length - 1; i >= 0; i--) {
+        if (projectNames[i] === selectedProjectName) {
+            projectNames.splice(i, 1);
+        }
+    }
+   updateProjectListUI();
+   updateSelectOptions();
+}
+
 export { projectNames }
 
 

@@ -1,6 +1,6 @@
-import { getTasksFromStorage, addTasksToLocalStorage } from './local-storage';
+import { getTasksFromStorage, addTasksToLocalStorage } from './local-storage.js';
 import { displayHeader } from "./index.js";
-import { getUpdatedNavButtonList } from './project-manager.js';
+import { getUpdatedNavButtonList, removeProject } from './project-manager.js';
 import { isToday, parseISO, format, isThisISOWeek, isThisMonth } from 'date-fns';
 
 export function taskManager() {
@@ -65,6 +65,7 @@ export function distributeTasks(buttonName, button) {
             }
         })
         createTaskElements(projectTaskList, projectName);
+        addDeleteProjectButton();
     }
 };
 
@@ -137,6 +138,15 @@ export function createTaskElements(taskList, buttonName) {
             deleteTask(task.id, taskList)
         });
     }) 
+}
+
+function addDeleteProjectButton() {
+    const header = taskUI.firstChild;
+    const deleteProjectButton = document.createElement('button');
+    deleteProjectButton.innerHTML = 'Remove Project';
+    header.appendChild(deleteProjectButton);
+
+    deleteProjectButton.addEventListener('click', (e) => {removeProject(e)})
 }
 
 function deleteTask(taskId, taskList) {
