@@ -1,9 +1,7 @@
 :root {
     --white-color: #f8f8f8;
-    --accent-text-color: #d4eac4;
-    /* --main-color: #556F44; */
-    /* --main-color: #004a3a; */
-    --main-color: #1b5235;
+    --accent-text-color: #d7e7b3;
+    --main-color: #013220;
     --main-text-color: #282828;
     font-family: Lexend Deca;
 }
@@ -336,12 +334,15 @@ label {
 }
 
 .task-item {
-    display: flex;
-    justify-content: space-between;
     border: 1px solid var(--main-color);
     border-radius: 5px;
     padding: 0 15px 0 15px;
     margin-bottom: 10px;
+}
+
+.collapsed-task-info {
+    display: flex;
+    justify-content: space-between;
 }
 
 .task-checkbox {
@@ -379,6 +380,17 @@ label {
 .edit-icon:hover, .trash-icon:hover {
     fill: var(--main-text-color);
 }
+
+.task-item.expand {
+    height: auto;
+    align-items: flex-start;
+}
+
+.task-details {
+   font-weight: 300;
+}
+
+
 
 
 
