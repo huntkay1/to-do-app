@@ -134,7 +134,7 @@ export function createTaskElements(taskList, buttonName) {
             editTaskToggle(selectedTask, task);
         })
         trashIcon.addEventListener('click', (e) => {
-            deleteTask(task.id, e)
+            deleteTask(task.id, taskList)
         });
     }) 
 }

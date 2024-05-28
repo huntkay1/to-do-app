@@ -65,6 +65,7 @@ export function updateProjectListUI() {
 
 export function updateSelectOptions() {
 
+    //prevents repeats
     while (selectInput.childNodes.length > 1) {
         selectInput.removeChild(selectInput.lastChild);
     };
