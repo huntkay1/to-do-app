@@ -1,6 +1,6 @@
 import { getTasksFromStorage, addTasksToLocalStorage } from './local-storage';
 import { displayHeader } from "./index.js";
-import { getUpdatedNavButtonList } from './add-project.js';
+import { getUpdatedNavButtonList } from './project-manager.js';
 import { isToday, parseISO, format, isThisISOWeek, isThisMonth } from 'date-fns';
 
 export function taskManager() {

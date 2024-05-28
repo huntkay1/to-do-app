@@ -9,10 +9,15 @@ const projectNameInput = document.getElementById("add-project");
 const addProjSubmit = document.getElementById("add-proj-submit");
 const selectInput = document.getElementById("form-select");
 
-addProjSubmit.addEventListener('click', addProjectNametoArray);
+addProjSubmit.addEventListener('click', () => {
+    if (projectNameInput.value!== '') {
+        addProjectNametoArray
+    }
+})
+
 
 projectNameInput.addEventListener('keyup', (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' & projectNameInput.value!== '') {
         e.preventDefault();
         e.target.blur();
         addProjectNametoArray();

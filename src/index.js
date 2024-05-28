@@ -1,13 +1,13 @@
 import './style.css';
 import melon from './melon-icon.png';
-import './add-project.js';
+import './project-manager.js';
 import './add-task.js';
 import './task-manager.js';
-import { getUpdatedNavButtonList } from './add-project.js';
+import { getUpdatedNavButtonList } from './project-manager.js';
 import { getTasksFromStorage } from './local-storage';
 import { getProjectsFromStorage } from './local-storage';
 import { taskManager } from './task-manager.js';
-import { updateProjectListUI, updateSelectOptions } from './add-project.js';
+import { updateProjectListUI, updateSelectOptions } from './project-manager.js';
 
 
 //add logo icon
