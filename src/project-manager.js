@@ -1,6 +1,7 @@
 import { displayHeader } from "./index.js";
-import { saveProjectsToStorage } from "./local-storage.js";
-import { getProjectsFromStorage } from "./local-storage.js";
+import { getProjectsFromStorage, saveProjectsToStorage, getTasksFromStorage, addTasksToLocalStorage } from "./local-storage.js";
+import { taskManager } from "./taskUI-manager.js";
+
 
 const projectNames = getProjectsFromStorage() || [];
 
@@ -84,15 +85,23 @@ export function getUpdatedNavButtonList() {
 }
 
 export function removeProject(e) {
+    var taskList = getTasksFromStorage(); 
     const header = e.currentTarget.parentElement;
     const selectedProjectName = header.firstChild.innerHTML;
     for (var i = projectNames.length - 1; i >= 0; i--) {
         if (projectNames[i] === selectedProjectName) {
             projectNames.splice(i, 1);
         }
-    }
+    };
+
+    taskList = taskList.filter(task => task.project !== selectedProjectName);
+ 
    updateProjectListUI();
    updateSelectOptions();
+   saveProjectsToStorage(projectNames);
+   addTasksToLocalStorage(taskList);
+   taskManager();
+
 }
 
 export { projectNames }

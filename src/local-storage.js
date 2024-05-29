@@ -13,12 +13,12 @@ export function saveProjectsToStorage(projectList) {
 };
 
 export function getTasksFromStorage() {
-  const storedTaskList = JSON.parse(localStorage.getItem('task'));
+  let storedTaskList = JSON.parse(localStorage.getItem('task'));
   return storedTaskList;
 };
 
 export function getProjectsFromStorage() {
-  const storedProjectList = JSON.parse(localStorage.getItem('projects'));
+  let storedProjectList = JSON.parse(localStorage.getItem('projects'));
   return storedProjectList;
 };
 
