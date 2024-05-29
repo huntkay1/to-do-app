@@ -9,7 +9,6 @@ import { getProjectsFromStorage } from './local-storage';
 import { taskManager } from './taskUI-manager.js';
 import { updateProjectListUI, updateSelectOptions } from './project-manager.js';
 
-
 //add logo icon
 const melonIcon = new Image(48, 48);
 melonIcon.src = melon;

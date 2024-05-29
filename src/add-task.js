@@ -8,6 +8,7 @@ const addTaskDialog = document.getElementById("add-task-popup");
 const dialogCloseBttn = document.getElementById("close");
 const submitBttn = document.getElementById("submit");
 
+const taskList = getTasksFromStorage() || [];
 
 class Task {
     constructor(name, description, date, project) {
@@ -38,7 +39,6 @@ submitBttn.addEventListener('click', (ev) => {
 
 
 function updateTaskList(ev) {
-    const taskList = getTasksFromStorage() || [];
     ev.preventDefault();
     addTaskDialog.close();
     const task = new Task(

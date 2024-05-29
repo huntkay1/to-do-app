@@ -2,7 +2,6 @@ import { displayHeader } from "./index.js";
 import { getProjectsFromStorage, saveProjectsToStorage, getTasksFromStorage, addTasksToLocalStorage } from "./local-storage.js";
 import { taskManager } from "./taskUI-manager.js";
 
-
 const projectNames = getProjectsFromStorage() || [];
 
 const nav2 = document.getElementById("nav-2");
