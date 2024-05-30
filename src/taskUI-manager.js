@@ -1,3 +1,6 @@
+// FOR THE LOVE OF GOD, CLEAN UP THIS CODE
+
+
 import { getTasksFromStorage, addTasksToLocalStorage } from './local-storage.js';
 import { displayHeader } from "./index.js";
 import { getUpdatedNavButtonList, removeProject } from './project-manager.js';
@@ -158,25 +161,10 @@ function deleteTask(taskId, taskList) {
     };
 };
 
-// function editTaskToggle(selectedTask, taskInfo, taskContainer) {
-//     const taskDetails = selectedTask.querySelector('.task-details');
-//     const inEditMode = selectedTask.classList.contains('edit-mode');
-
-//     if (inEditMode) {
-//         // Exit edit mode
-//         selectedTask.classList.remove('edit-mode');
-//         taskDetails.style.display = 'none';
-//         exitEditMode(taskContainer, taskInfo);
-//     } else {
-//         // Enter edit mode
-//         selectedTask.classList.add('edit-mode');
-//         taskDetails.style.display = 'block';
-//         enterEditMode(taskContainer, taskInfo);
-//     }
-// };
-
 function enterEditMode(taskContainer, taskInfo, selectedTask) {
+    
     const taskDetails = selectedTask.querySelector('.task-details');
+    //turn on edit mode and change display
     selectedTask.classList.add('edit-mode');
     taskDetails.style.display = 'block';
 
@@ -221,6 +209,35 @@ function enterEditMode(taskContainer, taskInfo, selectedTask) {
     };
 };
 
+function exitEditMode(taskContainer, taskInfo, selectedTask) {
+
+    const taskDetails = selectedTask.querySelector('.task-details');
+    //turn off edit mode and change display
+    selectedTask.classList.remove('edit-mode');
+    taskDetails.style.display = 'none';
+
+    const taskNameElement = taskContainer.querySelector('.task-name');
+    const taskDescriptionElement = taskContainer.querySelector('.task-description');
+
+    taskNameElement.innerHTML = taskInfo.name;
+    taskNameElement.contentEditable = "false";
+    taskDescriptionElement.contentEditable = "false";
+
+    // Replace date input with text element
+    const taskDateInput = taskContainer.querySelector('input[type="date"]');
+    const taskDateElement = document.createElement('p');
+    taskDateElement.classList.add('date');
+    taskDateElement.innerHTML = format(parseISO(taskInfo.date), 'MMM dd');;
+    taskDateInput.replaceWith(taskDateElement);
+
+    // Remove the buttons
+    const saveButton = taskContainer.querySelector('.save-button');
+    const cancelButton = taskContainer.querySelector('.cancel-button');
+    saveButton.remove();
+    cancelButton.remove();
+    
+}
+
 function saveTaskChanges(taskContainer, taskInfo, taskDateInput, selectedTask) {
     const taskNameElement = selectedTask.querySelector('.task-name');
     const taskDescriptionElement = selectedTask.querySelector('.task-description');
@@ -239,37 +256,6 @@ function saveTaskChanges(taskContainer, taskInfo, taskDateInput, selectedTask) {
     exitEditMode(taskContainer, taskInfo, selectedTask);
 
     taskManager();
-}
-
-function exitEditMode(taskContainer, taskInfo, selectedTask) {
-    const taskDetails = selectedTask.querySelector('.task-details');
-
-    selectedTask.classList.remove('edit-mode');
-    taskDetails.style.display = 'none';
-
-    const taskNameElement = taskContainer.querySelector('.task-name');
-    const taskDescriptionElement = taskContainer.querySelector('.task-description');
-
-    taskNameElement.innerHTML = taskInfo.name;
-    taskNameElement.contentEditable = "false";
-    taskDescriptionElement.contentEditable = "false";
-
-    // Replace date input with text element
-    const taskDateInput = taskContainer.querySelector('input[type="date"]');
-    const taskDateElement = document.createElement('p');
-    taskDateElement.classList.add('date');
-    taskDateElement.innerHTML = format(parseISO(taskInfo.date), 'MMM dd');;
-    taskDateInput.replaceWith(taskDateElement);
-
-    // Remove the save button
-    const saveButton = taskContainer.querySelector('.save-button');
-    const cancelButton = taskContainer.querySelector('.cancel-button');
-    if (saveButton) {
-        saveButton.remove();
-    }
-    if (cancelButton) {
-        cancelButton.remove();
-    }
 }
 
 
