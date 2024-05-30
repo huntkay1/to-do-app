@@ -1,7 +1,7 @@
 :root {
     --white-color: #f8f8f8;
-    --accent-text-color: #d7e7b3;
-    --main-color: #013220;
+    --accent-text-color: #DFF2D8;
+    --main-color: #2E2E2E;
     --main-text-color: #282828;
     font-family: Lexend Deca;
 }
@@ -46,7 +46,7 @@ header {
     border-radius: 20px;
     margin-bottom: 10px;
     margin-right: 4vw;
-    width: 130px;
+    width: 150px;
 }
 
 #add-task:hover {
@@ -101,7 +101,7 @@ nav {
 }
 
 #nav-1 button p {
-    color: var(--accent-text-color);
+    color: var(--white-color);
     font-size: 16px;
     font-weight: 400;
     pointer-events: none; 
@@ -136,7 +136,7 @@ button.active svg {
     font-size: 16px;
     font-weight: 300;
     margin: 20px 0 20px 3.75vw;
-    color: var(--accent-text-color);
+    color: var(--white-color);
     padding-left: 15px;
 }
 
