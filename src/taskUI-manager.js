@@ -160,16 +160,16 @@ function deleteTask(taskId, taskList) {
 
 function editTaskToggle(selectedTask, taskInfo, taskContainer) {
     const taskDetails = selectedTask.querySelector('.task-details');
-    const isExpanded = selectedTask.classList.contains('expand');
+    const inEditMode = selectedTask.classList.contains('edit-mode');
 
-    if (isExpanded) {
+    if (inEditMode) {
         // Exit edit mode
-        selectedTask.classList.remove('expand');
+        selectedTask.classList.remove('edit-mode');
         taskDetails.style.display = 'none';
         exitEditMode(taskContainer, taskInfo);
     } else {
         // Enter edit mode
-        selectedTask.classList.add('expand');
+        selectedTask.classList.add('edit-mode');
         taskDetails.style.display = 'block';
         enterEditMode(taskContainer, taskInfo);
     }
@@ -185,6 +185,7 @@ const taskNameElement = taskContainer.querySelector('.task-name');
 
     // Replace taskDateElement with an input field
     const taskDateInput = document.createElement('input');
+    taskDateInput.classList.add('editable-date');
     taskDateInput.type = 'date';
     taskDateInput.value = taskInfo.date; // Set current task date
     taskDateElement.replaceWith(taskDateInput);

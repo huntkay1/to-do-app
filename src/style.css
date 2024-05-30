@@ -376,8 +376,18 @@ label {
     color: var(--main-text-color);
 }
 
+.task-name {
+    font-weight: 300;
+}
+
 .date {
     font-size: 12px;
+}
+
+.editable-date {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--main-color);
 }
 
 .task-icons {
@@ -389,7 +399,16 @@ label {
     fill: var(--main-text-color);
 }
 
-.task-item.expand {
+.task-details{
+   font-weight: 300;
+   margin-bottom: 10px;
+   margin-top: 10px;
+   font-size: 13px;
+}
+
+
+/* EDIT MODE */
+.task-item.edit-mode {
     height: auto;
     align-items: flex-start;
     padding-bottom: 15px;
@@ -397,13 +416,31 @@ label {
     flex-direction: column;
 }
 
-.task-item.expand .collapsed-task-info {
+.task-item.edit-mode .collapsed-task-info {
     width: 100%;
 }
 
-.task-details {
-   font-weight: 300;
-   padding-bottom: 5px;
+.task-item.edit-mode .task-name {
+    border-bottom: 1px solid var(--main-color);
+    padding-bottom: 2px;
+}
+
+.task-item.edit-mode .task-details {
+    border: 1px solid var(--main-color);
+    width: 100%;
+    height: 100px;
+    padding-bottom: 18px;
+}
+
+.task-item.edit-mode .task-description {
+    height: 100%;
+    margin-left: 5px;
+    text-overflow: clip;
+    overflow-y: scroll;
+}
+
+.task-item.edit-mode .task-description:read-write:focus {
+    outline: none;
 }
 
 .save-button {
