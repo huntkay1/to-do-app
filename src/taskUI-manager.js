@@ -11,7 +11,7 @@ export function taskManager() {
         //this will automatically display newly created task to the active page
         if (button.classList.contains('active')) {
             distributeTasks(button.name);
-        }
+        };
     });
 
     document.body.addEventListener('click', (e) => {
@@ -19,17 +19,16 @@ export function taskManager() {
         let buttonName = button.name;
         if (button.classList.contains("nav-button")) {
             distributeTasks(buttonName, button)
-        }
-    })
-
-}
+        };
+    });
+};
 
 export function distributeTasks(buttonName, button) {
         
     const taskList = getTasksFromStorage();
     taskList.sort(function(a,b){
         return new Date(a.date) - new Date(b.date);
-    })
+    });
 
     if (buttonName === "All Tasks") {
         createTaskElements(taskList, buttonName);
@@ -66,7 +65,7 @@ export function distributeTasks(buttonName, button) {
         })
         createTaskElements(projectTaskList, projectName);
         addDeleteProjectButton();
-    }
+    };
 };
 
 export function createTaskElements(taskList, buttonName) {
@@ -132,13 +131,13 @@ export function createTaskElements(taskList, buttonName) {
         //task icon event listeners
         editIcon.addEventListener('click', (e) => {
             const selectedTask = e.currentTarget.closest('.task-item');
-            editTaskToggle(selectedTask, task);
-        })
+            editTaskToggle(selectedTask, task, taskContainer);
+        });
         trashIcon.addEventListener('click', (e) => {
             deleteTask(task.id, taskList)
         });
-    }) 
-}
+    }) ;
+};
 
 function addDeleteProjectButton() {
     const header = taskUI.firstChild;
@@ -146,8 +145,8 @@ function addDeleteProjectButton() {
     deleteProjectButton.innerHTML = 'Remove Project';
     header.appendChild(deleteProjectButton);
 
-    deleteProjectButton.addEventListener('click', (e) => {removeProject(e)})
-}
+    deleteProjectButton.addEventListener('click', (e) => {removeProject(e)});
+};
 
 function deleteTask(taskId, taskList) {
     taskList = taskList.filter(task => task.id !== taskId);
@@ -156,28 +155,94 @@ function deleteTask(taskId, taskList) {
     const activeButton = document.querySelector('.nav-button.active');
     if (activeButton) {
         distributeTasks(activeButton.name, activeButton);
-    }
-}
+    };
+};
 
-function editTaskToggle(selectedTask, task) {
+function editTaskToggle(selectedTask, taskInfo, taskContainer) {
     const taskDetails = selectedTask.querySelector('.task-details');
-    if (task.description !== "") {
-        if (selectedTask.classList.contains('expand')) {
-            selectedTask.classList.remove('expand');
-            taskDetails.style.display = 'none';
-    
-        } else {
-            selectedTask.classList.add('expand');
-            taskDetails.style.display = 'block';
-        }
+    const isExpanded = selectedTask.classList.contains('expand');
+
+    if (isExpanded) {
+        // Exit edit mode
+        selectedTask.classList.remove('expand');
+        taskDetails.style.display = 'none';
+        exitEditMode(taskContainer, taskInfo);
     } else {
-    //CONTINUE HERE!!!!
+        // Enter edit mode
+        selectedTask.classList.add('expand');
+        taskDetails.style.display = 'block';
+        enterEditMode(taskContainer, taskInfo);
     }
+};
 
+function enterEditMode(taskContainer, taskInfo) {
+const taskNameElement = taskContainer.querySelector('.task-name');
+    const taskDateElement = taskContainer.querySelector('.date');
+    const taskDescriptionElement = taskContainer.querySelector('.task-description');
 
+    taskNameElement.contentEditable = "true";
+    taskDescriptionElement.contentEditable = "true";
+
+    // Replace taskDateElement with an input field
+    const taskDateInput = document.createElement('input');
+    taskDateInput.type = 'date';
+    taskDateInput.value = taskInfo.date; // Set current task date
+    taskDateElement.replaceWith(taskDateInput);
+
+    // Check if save button already exists to avoid adding multiple
+    let saveButton = taskContainer.querySelector('.save-button');
+    if (!saveButton) {
+        saveButton = document.createElement('button');
+        saveButton.textContent = 'Save';
+        saveButton.classList.add('save-button');
+        taskContainer.appendChild(saveButton);
+
+        saveButton.addEventListener('click', () => {
+            saveTaskChanges(taskContainer, taskInfo, taskDateInput);
+        });
+    }
+};
+
+function saveTaskChanges(taskContainer, taskInfo, taskDateInput) {
+    const taskNameElement = taskContainer.querySelector('.task-name');
+    const taskDescriptionElement = taskContainer.querySelector('.task-description');
+
+    taskInfo.name = taskNameElement.textContent;
+    taskInfo.date = taskDateInput.value; // Use value from date input
+    taskInfo.description = taskDescriptionElement.textContent;
+
+    const taskList = getTasksFromStorage();
+    const taskIndex = taskList.findIndex(task => task.id === taskInfo.id);
+    taskList[taskIndex] = taskInfo;
+    addTasksToLocalStorage(taskList);
+
+    // Exit edit mode
+    exitEditMode(taskContainer, taskInfo);
+
+    taskManager();
 }
 
+function exitEditMode(taskContainer, taskInfo) {
+    const taskNameElement = taskContainer.querySelector('.task-name');
+    const taskDescriptionElement = taskContainer.querySelector('.task-description');
 
+    taskNameElement.innerHTML = taskInfo.name;
+    taskNameElement.contentEditable = "false";
+    taskDescriptionElement.contentEditable = "false";
+
+    // Replace date input with text element
+    const taskDateInput = taskContainer.querySelector('input[type="date"]');
+    const taskDateElement = document.createElement('p');
+    taskDateElement.classList.add('date');
+    taskDateElement.innerHTML = format(parseISO(taskInfo.date), 'MMM dd');;
+    taskDateInput.replaceWith(taskDateElement);
+
+    // Remove the save button
+    const saveButton = taskContainer.querySelector('.save-button');
+    if (saveButton) {
+        saveButton.remove();
+    }
+}
 
 
 
