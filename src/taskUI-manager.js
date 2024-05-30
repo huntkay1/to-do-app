@@ -114,7 +114,7 @@ export function createTaskElements(taskList, buttonName) {
         const formattedDate = format(parseISO(task.date), 'MMM dd');
         taskDate.innerHTML = formattedDate;
 
-        // Add extra details
+        // Add description
         const taskDetails = document.createElement('div');
         taskDetails.classList.add('task-details');
         taskDetails.style.display = 'none'; // Initially hidden
@@ -131,7 +131,7 @@ export function createTaskElements(taskList, buttonName) {
         //task icon event listeners
         editIcon.addEventListener('click', (e) => {
             const selectedTask = e.currentTarget.closest('.task-item');
-            editTaskToggle(selectedTask, task, taskContainer);
+            enterEditMode(selectedTask, task, taskContainer);
         });
         trashIcon.addEventListener('click', (e) => {
             deleteTask(task.id, taskList)
@@ -158,25 +158,29 @@ function deleteTask(taskId, taskList) {
     };
 };
 
-function editTaskToggle(selectedTask, taskInfo, taskContainer) {
+// function editTaskToggle(selectedTask, taskInfo, taskContainer) {
+//     const taskDetails = selectedTask.querySelector('.task-details');
+//     const inEditMode = selectedTask.classList.contains('edit-mode');
+
+//     if (inEditMode) {
+//         // Exit edit mode
+//         selectedTask.classList.remove('edit-mode');
+//         taskDetails.style.display = 'none';
+//         exitEditMode(taskContainer, taskInfo);
+//     } else {
+//         // Enter edit mode
+//         selectedTask.classList.add('edit-mode');
+//         taskDetails.style.display = 'block';
+//         enterEditMode(taskContainer, taskInfo);
+//     }
+// };
+
+function enterEditMode(taskContainer, taskInfo, selectedTask) {
     const taskDetails = selectedTask.querySelector('.task-details');
-    const inEditMode = selectedTask.classList.contains('edit-mode');
+    selectedTask.classList.add('edit-mode');
+    taskDetails.style.display = 'block';
 
-    if (inEditMode) {
-        // Exit edit mode
-        selectedTask.classList.remove('edit-mode');
-        taskDetails.style.display = 'none';
-        exitEditMode(taskContainer, taskInfo);
-    } else {
-        // Enter edit mode
-        selectedTask.classList.add('edit-mode');
-        taskDetails.style.display = 'block';
-        enterEditMode(taskContainer, taskInfo);
-    }
-};
-
-function enterEditMode(taskContainer, taskInfo) {
-const taskNameElement = taskContainer.querySelector('.task-name');
+    const taskNameElement = taskContainer.querySelector('.task-name');
     const taskDateElement = taskContainer.querySelector('.date');
     const taskDescriptionElement = taskContainer.querySelector('.task-description');
 
@@ -193,20 +197,34 @@ const taskNameElement = taskContainer.querySelector('.task-name');
     // Check if save button already exists to avoid adding multiple
     let saveButton = taskContainer.querySelector('.save-button');
     if (!saveButton) {
-        saveButton = document.createElement('button');
+        const editModeButtonContainer = document.createElement('div');
+        editModeButtonContainer.classList.add('edit-mode-button-container');
+
+        const cancelButton = document.createElement('button');
+        cancelButton.textContent = 'Cancel';
+        cancelButton.classList.add('cancel-button');
+        editModeButtonContainer.appendChild(cancelButton);
+        const saveButton = document.createElement('button');
         saveButton.textContent = 'Save';
         saveButton.classList.add('save-button');
-        taskContainer.appendChild(saveButton);
+        editModeButtonContainer.appendChild(saveButton);
+    
+        taskContainer.appendChild(editModeButtonContainer);
 
         saveButton.addEventListener('click', () => {
-            saveTaskChanges(taskContainer, taskInfo, taskDateInput);
+            saveTaskChanges(taskContainer, taskInfo, taskDateInput, selectedTask);
         });
-    }
+
+        cancelButton.addEventListener('click', () => {
+            exitEditMode(taskContainer, taskInfo, selectedTask);
+        });
+    };
 };
 
-function saveTaskChanges(taskContainer, taskInfo, taskDateInput) {
-    const taskNameElement = taskContainer.querySelector('.task-name');
-    const taskDescriptionElement = taskContainer.querySelector('.task-description');
+function saveTaskChanges(taskContainer, taskInfo, taskDateInput, selectedTask) {
+    const taskNameElement = selectedTask.querySelector('.task-name');
+    const taskDescriptionElement = selectedTask.querySelector('.task-description');
+
 
     taskInfo.name = taskNameElement.textContent;
     taskInfo.date = taskDateInput.value; // Use value from date input
@@ -218,12 +236,17 @@ function saveTaskChanges(taskContainer, taskInfo, taskDateInput) {
     addTasksToLocalStorage(taskList);
 
     // Exit edit mode
-    exitEditMode(taskContainer, taskInfo);
+    exitEditMode(taskContainer, taskInfo, selectedTask);
 
     taskManager();
 }
 
-function exitEditMode(taskContainer, taskInfo) {
+function exitEditMode(taskContainer, taskInfo, selectedTask) {
+    const taskDetails = selectedTask.querySelector('.task-details');
+
+    selectedTask.classList.remove('edit-mode');
+    taskDetails.style.display = 'none';
+
     const taskNameElement = taskContainer.querySelector('.task-name');
     const taskDescriptionElement = taskContainer.querySelector('.task-description');
 
@@ -240,8 +263,12 @@ function exitEditMode(taskContainer, taskInfo) {
 
     // Remove the save button
     const saveButton = taskContainer.querySelector('.save-button');
+    const cancelButton = taskContainer.querySelector('.cancel-button');
     if (saveButton) {
         saveButton.remove();
+    }
+    if (cancelButton) {
+        cancelButton.remove();
     }
 }
 
