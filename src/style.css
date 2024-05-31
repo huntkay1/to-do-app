@@ -3,6 +3,7 @@
     --accent-text-color: #DFF2D8;
     --main-color: #2E2E2E;
     --main-text-color: #282828;
+    --cross-off-color: #545454;
     font-family: Lexend Deca;
 }
 
@@ -407,6 +408,41 @@ label {
    font-size: 13px;
 }
 
+/* CROSSED OFF TASK */
+
+.task-item.crossed-off {
+    border: 1px solid var(--cross-off-color);
+}
+
+.task-item.crossed-off .task-name {
+    text-decoration: line-through;
+    color: var(--cross-off-color);
+}
+
+.task-item.crossed-off .task-checkbox {
+    border: 1px solid var(--cross-off-color);
+}
+
+.task-item.crossed-off .date {
+    text-decoration: line-through;
+    color: var(--cross-off-color);
+}
+
+.task-item.crossed-off .edit-icon path{
+    stroke: var(--cross-off-color);
+}
+
+.task-item.crossed-off .trash-icon path{
+    stroke: var(--cross-off-color);
+}
+
+.task-item.crossed-off .edit-icon:hover {
+    fill: var(--cross-off-color);
+}
+
+.task-item.crossed-off .trash-icon:hover {
+    fill: var(--cross-off-color);
+}
 
 /* EDIT MODE */
 .task-item.edit-mode {

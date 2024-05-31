@@ -104,9 +104,3 @@ export function removeProject(e) {
 }
 
 export { projectNames }
-
-
-
-
-
-

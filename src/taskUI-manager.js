@@ -139,7 +139,20 @@ export function createTaskElements(taskList, buttonName) {
         trashIcon.addEventListener('click', (e) => {
             deleteTask(task.id, taskList)
         });
+        checkbox.addEventListener('click', (e) => {
+            const selectedTask = e.currentTarget.closest('.task-item');
+            crossOffTask(selectedTask);
+        })
     }) ;
+};
+
+function crossOffTask(selectedTask) {
+    const crossedOff = selectedTask.classList.contains('crossed-off');
+    if (crossedOff) {
+        selectedTask.classList.remove('crossed-off');
+    } else {
+        selectedTask.classList.add('crossed-off');
+    }
 };
 
 function addDeleteProjectButton() {
@@ -257,6 +270,3 @@ function saveTaskChanges(taskContainer, taskInfo, taskDateInput, selectedTask) {
 
     taskManager();
 }
-
-
-
