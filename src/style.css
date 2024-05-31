@@ -361,6 +361,7 @@ label {
     background-color: transparent;
     margin-right: 30px;
     flex-shrink: 0;
+    padding: 0;
 }
 
 .task-left, .task-right {
@@ -421,7 +422,11 @@ label {
 
 .task-item.crossed-off .task-checkbox {
     border: 1px solid var(--cross-off-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .task-item.crossed-off .date {
     text-decoration: line-through;
