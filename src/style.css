@@ -514,6 +514,12 @@ label {
     background-color: transparent;
 }
 
+/* EXPANDED */
+
+.task-item.expanded {
+    height: auto;
+}
+
 
 
 
