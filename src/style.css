@@ -441,6 +441,10 @@ label {
     stroke: var(--cross-off-color);
 }
 
+.task-item.crossed-off .expand-icon {
+    fill: var(--cross-off-color);
+}
+
 .task-item.crossed-off .edit-icon:hover {
     fill: var(--cross-off-color);
 }
@@ -515,7 +519,6 @@ label {
 }
 
 /* EXPANDED */
-
 .task-item.expanded {
     height: auto;
 }
