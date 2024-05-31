@@ -5,12 +5,12 @@ module.exports = {
     entry: './src/index.js',
     output : {
         filename: 'main.js',
-        path: '/',
+        path: path.resolve(__dirname, 'dist'),
     },
     plugins: [new HtmlWebpackPlugin({
         template: './src/index.html'
     })],
-    module: {
+      module: {
         rules: [
           {
             test: /\.css$/i,
@@ -20,10 +20,6 @@ module.exports = {
             test: /\.(png|svg|jpg|jpeg|gif)$/i,
             type: 'asset/resource',
           },
-        ] 
-      },
-      module: {
-        rules: [
           {
             test: /\.(?:js|mjs|cjs)$/,
             exclude: /node_modules/,
