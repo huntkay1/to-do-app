@@ -15,6 +15,7 @@ class Task {
         this.description = description;
         this.date = date;
         this.project = project;
+        this.complete = "";
     }
 }
 
@@ -51,6 +52,7 @@ function updateTaskList(ev) {
 
     addTasksToLocalStorage(taskList);
     taskManager();
+    console.log(taskList);
 }
 
 

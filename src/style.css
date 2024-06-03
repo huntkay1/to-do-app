@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Nanum+Pen+Script&display=swap");
+
 :root {
     --white-color: #f8f8f8;
     --accent-text-color: #DFF2D8;
     --main-color: #2E2E2E;
     --main-text-color: #282828;
     --cross-off-color: #545454;
-    font-family: Lexend Deca;
+    font-family: 'Lexend Deca';
 }
 
 body {
@@ -16,6 +18,11 @@ body {
     margin: 0;
     background-color: var(--main-color);
     box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body, header, #logo, #add-task, h1, nav, #nav-1, #nav-1 button, #nav-1 button p, #nav-subhead, #nav-2-section, #nav-2, #add-project, #add-proj-submit, .nav2-item, #add-task-popup, #close, .popup-input, textarea, select, input, label, #submit, #taskUI, .taskUI-header, .taskUI-header-name, .task-item, .task-checkbox, .task-name, .date, .task-details, .remove-project, .task-item.crossed-off, .task-item.edit-mode, .save-button, .cancel-button {
+    font-family: 'Lexend Deca', sans-serif;
 }
 
 header {
@@ -25,6 +32,7 @@ header {
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
+    font-family: var(--font-family);
 }
 
 #logo {
@@ -102,7 +110,7 @@ nav {
 #nav-1 button p {
     color: var(--white-color);
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     pointer-events: none; 
     padding-right: 10px;
 }
@@ -168,7 +176,7 @@ button.active svg {
 #add-project::placeholder {
     color: var(--white-color);
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 #add-project:focus{
@@ -204,7 +212,7 @@ button.active svg {
 .nav2-item {
     color: var(--white-color);
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     margin-bottom: 22px;
     background-color: transparent;
     border: none;
@@ -429,8 +437,9 @@ label {
     padding: 8px 12px;
     font-size: 12px;
 }
-/* CROSSED OFF TASK */
 
+
+/* CROSSED OFF TASK */
 .task-item.crossed-off {
     border: 1px solid var(--cross-off-color);
 }
