@@ -10,7 +10,7 @@ import { taskManager } from './taskUI-manager.js';
 import { updateProjectListUI, updateSelectOptions } from './project-manager.js';
 
 //add logo icon
-const melonIcon = new Image(48, 48);
+const melonIcon = new Image(45, 45);
 melonIcon.src = melon;
 const logo = document.getElementById("logo");
 melonIcon.classList.add("melon-icon");
@@ -61,8 +61,6 @@ const changeTabActiveStatus = (e) => {
     var activeTab = e.target;
     activeTab.classList.add("active");
 }
-
-
 
 
 

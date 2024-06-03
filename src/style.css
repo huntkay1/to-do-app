@@ -64,13 +64,11 @@ header {
 
 h1 {
     color: var(--white-color);
-    font-size: 28px;
-    font-weight: 500;
+    font-size: 25px;
+    font-weight: 400;
     padding-left: 3px;
     order: 2;
 }
-
-
 
 nav {
     grid-row: 2 / -1;
@@ -413,6 +411,14 @@ label {
    font-size: 13px;
 }
 
+.remove-project {
+    background-color: var(--main-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 12px;
+}
 /* CROSSED OFF TASK */
 
 .task-item.crossed-off {

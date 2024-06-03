@@ -1,5 +1,3 @@
-// FOR THE LOVE OF GOD, CLEAN UP THIS CODE
-
 
 import { getTasksFromStorage, addTasksToLocalStorage } from './local-storage.js';
 import { displayHeader } from "./index.js";
@@ -187,6 +185,7 @@ function crossOffTask(selectedTask, checkbox) {
 function addDeleteProjectButton() {
     const header = taskUI.firstChild;
     const deleteProjectButton = document.createElement('button');
+    deleteProjectButton.classList.add('remove-project');
     deleteProjectButton.innerHTML = 'Remove Project';
     header.appendChild(deleteProjectButton);
 
