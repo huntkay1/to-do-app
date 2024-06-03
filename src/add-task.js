@@ -1,5 +1,4 @@
-import { addTasksToLocalStorage } from './local-storage.js';
-import { getTasksFromStorage } from './local-storage';
+import { addTasksToLocalStorage, getTasksFromStorage } from './local-storage.js';
 import { taskManager } from './taskUI-manager.js';
 
 
@@ -7,6 +6,7 @@ const addTaskBttn = document.getElementById("add-task");
 const addTaskDialog = document.getElementById("add-task-popup");
 const dialogCloseBttn = document.getElementById("close");
 const submitBttn = document.getElementById("submit");
+
 
 class Task {
     constructor(name, description, date, project) {
@@ -36,7 +36,6 @@ submitBttn.addEventListener('click', (ev) => {
     updateTaskList(ev);
 })
 
-
 function updateTaskList(ev) {
     const taskList = getTasksFromStorage() || [];
     ev.preventDefault();
@@ -52,8 +51,25 @@ function updateTaskList(ev) {
 
     addTasksToLocalStorage(taskList);
     taskManager();
-    console.log(taskList);
 }
+
+
+//demo task list
+const demoTasks = [
+    new Task("Sample Task 1", "This is a sample task description.", "2024-05-28", "Default Project"),
+    new Task("Sample Task 2", "This is another sample task description.", "2024-06-01", "Default Project"),
+    new Task("Sample Task 3", "Yet another sample task description.", "2024-07-15", "Default Project")
+];
+
+export function initializeTaskList() {
+    let taskList = getTasksFromStorage();
+    if (!taskList || taskList.length === 0) {
+        addTasksToLocalStorage(demoTasks);
+        taskList = demoTasks;
+    }
+    taskManager(); 
+}
+
 
 
 

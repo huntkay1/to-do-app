@@ -8,6 +8,7 @@ import { getTasksFromStorage } from './local-storage';
 import { getProjectsFromStorage } from './local-storage';
 import { taskManager } from './taskUI-manager.js';
 import { updateProjectListUI, updateSelectOptions } from './project-manager.js';
+import { initializeTaskList } from './add-task.js';
 
 //add logo icon
 const melonIcon = new Image(45, 45);
@@ -15,6 +16,8 @@ melonIcon.src = melon;
 const logo = document.getElementById("logo");
 melonIcon.classList.add("melon-icon");
 logo.appendChild(melonIcon);
+
+initializeTaskList(); //shows demo task list
 
 const navButtons = getUpdatedNavButtonList();
 
