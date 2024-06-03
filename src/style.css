@@ -132,11 +132,16 @@ button.active svg {
 
 /* NAV 2 */
 #nav-subhead {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
-    margin: 20px 0 20px 3.75vw;
-    color: var(--white-color);
+    margin: 20px 0 5px 3.75vw;
+    color: var(--accent-text-color);
     padding-left: 15px;
+}
+
+#nav-2-section {
+    height: 300px;
+    overflow: scroll;
 }
 
 #nav-2 {
@@ -187,11 +192,13 @@ button.active svg {
     height: 25px;
     width: 28px;
     padding: 0;
+    display: flex;
+    align-items: center;
 }
 
 #add-proj-submit:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 4px 0px inset;
-    transition: all 0.15s ease;
+    border: 1.5px solid var(--accent-text-color);
+    border-radius: 25px;
 }
 
 .nav2-item {
@@ -211,12 +218,10 @@ button.active svg {
     text-overflow: ellipsis;
 }
 
-
 .nav2-item span{
     display: flex;
     align-items: center;
 }
-
 
 .nav2-item:hover {
     color: var(--accent-text-color);
@@ -227,7 +232,6 @@ button.active svg {
     fill: var(--accent-text-color);
     transition: all 0.15s ease;
 }
-
 
 
 /* POP-UP FORM */
@@ -259,7 +263,7 @@ button.active svg {
 
 .popup-input {
     margin-bottom: 25px;
-    font-size: 16px;
+    font-size: 13px;
     height: 40px;
     border: 1px solid var(--main-color);
     border-radius: 2px;
@@ -400,8 +404,14 @@ label {
     margin-right: 15px;
 }
 
-.edit-icon:hover, .trash-icon:hover {
-    fill: var(--main-text-color);
+.trash-icon:hover path {
+    stroke: #AA4A44;
+    stroke-width: 2.5px;
+}
+
+.edit-icon:hover path {
+    stroke: var(--main-text-color);
+    stroke-width: 2.5px;
 }
 
 .task-details{
