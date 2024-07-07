@@ -35,15 +35,15 @@ export function distributeTasks(buttonName, button) {
         createTaskElements(taskList, buttonName);
     } else if (buttonName === "Today") {
         var todayTaskList = taskList.filter(task => {
-            date = parseISO(task.date);
-            if (isToday(date)) {
+            // const date = parseISO(task.date);
+            if (isToday(parseISO(task.date))) {
                 return task;
             }
         })
         createTaskElements(todayTaskList, buttonName);
     } else if (buttonName === "This Week") {
         var weekTaskList = taskList.filter(task => {
-            date = parseISO(task.date);
+            const date = parseISO(task.date);
             if (isThisISOWeek(date)) {
                 return task;
             }
@@ -51,7 +51,7 @@ export function distributeTasks(buttonName, button) {
         createTaskElements(weekTaskList, buttonName);
     } else if (buttonName === "This Month") {
         var monthTaskList = taskList.filter(task => {
-            date = parseISO(task.date);
+            const date = parseISO(task.date);
             if (isThisMonth(date)) {
                 return task;
             }
@@ -142,7 +142,7 @@ export function createTaskElements(taskList, buttonName) {
             const selectedTask = e.currentTarget.closest('.task-item');
             enterEditMode(selectedTask, task, taskContainer);
         });
-        trashIcon.addEventListener('click', (e) => {
+        trashIcon.addEventListener('click', () => {
             deleteTask(task.id, taskList)
         });
         checkbox.addEventListener('click', (e) => {
