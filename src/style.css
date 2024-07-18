@@ -2,10 +2,11 @@
 
 :root {
     --white-color: #f8f8f8;
-    --accent-text-color: #DFF2D8;
-    --main-color: #2E2E2E;
+    --accent-text-color: #cfe2ce;
+    --main-color: #2d452f;
     --main-text-color: #282828;
     --cross-off-color: #545454;
+    --accent-green: #6b9d4a;
     font-family: 'Lexend Deca';
 }
 
@@ -353,7 +354,7 @@ label {
 }
 
 .task-item {
-    border: 1.5px solid var(--main-color);
+    border: 1.5px solid var(--accent-green);
     border-radius: 5px;
     padding: 0 15px 0 15px;
     margin-bottom: 10px;
@@ -368,6 +369,7 @@ label {
     height: 15px;
     width: 15px;
     border: 1.5px solid black;
+    border-radius: 2px;
     background-color: transparent;
     margin-right: 30px;
     flex-shrink: 0;
